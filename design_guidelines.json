@@ -1,0 +1,77 @@
+{
+  "theme": "dark",
+  "archetype": "5 (Luxury) mixed with 4 (Swiss & High-Contrast)",
+  "vibe": "Finance-professional (navy/clean), editorial, sophisticated, rigorous.",
+  "colors": {
+    "background": "#030712",
+    "background_secondary": "#0A1128",
+    "text_primary": "#F8FAFC",
+    "text_secondary": "#94A3B8",
+    "accent_primary": "#3B82F6",
+    "accent_muted": "rgba(59, 130, 246, 0.2)",
+    "border": "rgba(255, 255, 255, 0.1)",
+    "card_bg": "rgba(255, 255, 255, 0.03)"
+  },
+  "typography": {
+    "headings": "Cabinet Grotesk, sans-serif",
+    "accents_italics": "Playfair Display, serif",
+    "mono_data": "JetBrains Mono, monospace",
+    "body": "IBM Plex Sans, sans-serif",
+    "rules": {
+      "h1": "text-5xl md:text-7xl font-bold tracking-tighter uppercase",
+      "h2": "text-2xl md:text-4xl font-medium tracking-tight",
+      "h3": "text-xl font-medium",
+      "overline": "text-xs uppercase tracking-[0.2em] font-mono text-secondary",
+      "body": "text-base leading-relaxed text-secondary"
+    }
+  },
+  "layout": {
+    "spacing_system": "Generous. Use py-24 to py-32 for section spacing.",
+    "section_structure": "Editorial grid. On desktop, a 12-column grid where left 4 cols are sticky (Section number, title) and right 8 cols hold the content.",
+    "borders": "Exposed structural borders. 1px solid rgba(255,255,255,0.1) separating sections and grid items to create a technical/Swiss feel."
+  },
+  "components": {
+    "hero": {
+      "structure": "Massive typography for 'SHREYSHTH_SHARMA'. Monospace status bar at top with live clock, location (Bloomington, IN / London, UK), and availability. Brief 'short version' bio.",
+      "motion": "Reveal text character-by-character or slide up."
+    },
+    "about": {
+      "structure": "Editorial text block with italicized serif accents. A portrait image with a monochromatic/navy filter. Four stat counters at the bottom (e.g., '2 Degrees', '3+ Internships', 'Analytical rigor', '1 Focus')."
+    },
+    "skills": {
+      "structure": "Bento grid or elegant list of categories (Financial Analysis, Tech Stack, etc.). Use pill-shaped tags for individual skills."
+    },
+    "experience": {
+      "structure": "Vertical timeline. Left side dates, right side role, company, description, and skill pills. Clear 1px left border for the timeline track."
+    },
+    "projects": {
+      "structure": "Numbered cards (01, 02). Include at least one card featuring a data visualization (built with pure HTML/Tailwind bars or Recharts) representing metric impact (e.g., Intel data processing performance or financial model accuracy)."
+    },
+    "education": {
+      "structure": "Journey format. Indiana University Bloomington (Origin/Current), LSE (Exchange), CFA Program."
+    },
+    "contact": {
+      "structure": "Large 'Let's talk' heading. Grid of big links for Email, LinkedIn, GitHub. Prominent 'Download CV' button."
+    },
+    "chatbot": {
+      "structure": "Floating widget bottom-right. Label 'Ask Shreyshth'. When opened, a chat window with pre-filled prompt pills (e.g., 'What is his valuation experience?', 'Download CV').",
+      "motion": "Spring animation on entry and open."
+    }
+  },
+  "media": {
+    "portrait": {
+      "url": "https://images.unsplash.com/photo-1767175620484-1ed37931a0d1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMG1hbiUyMHN1aXQlMjBuZXV0cmFsJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3ODI3MjQ5NjF8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Professional man in suit, use as placeholder for Shreyshth's portrait. Apply grayscale or navy-tint filter in CSS."
+    }
+  },
+  "instructions_to_main_agent": [
+    "Build a single-page scroll-driven portfolio matching the reference structure but adapted for a finance professional.",
+    "Use raw HTML/Tailwind for complex layout grids (Swiss/editorial style). Do not over-rely on Shadcn for the main page layout.",
+    "Implement scroll animations using Framer Motion (fade up, slide in).",
+    "Ensure the hero has a live clock and location status using React hooks.",
+    "The 'Ask Shreyshth' chatbot should be a functional UI component (mock the AI response logic with a timeout and static responses).",
+    "Add 'data-testid' to all buttons, links, and form elements.",
+    "Use Cabinet Grotesk (or similar geometric sans) for large text, Playfair Display for italicized accent words within headings, and IBM Plex Sans for body. Add font imports via Google Fonts/Fontsource in index.css.",
+    "For the Project section's metrics, build a sleek bar chart representation of data (e.g., comparing old process vs Shreyshth's optimization)."
+  ]
+}
