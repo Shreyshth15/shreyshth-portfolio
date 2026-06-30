@@ -16,14 +16,19 @@ Finance recruiters / hiring managers in asset management & credit research evalu
 - Floating AI assistant "Ash" answering questions about Shreyshth, streaming token-by-token.
 
 ## Implemented (2026-06-30)
-- Full single-page portfolio with all 7 sections, scroll-reveal animations, animated stat counters, experience timeline, project cards + animated bar chart (Intel prep-time), education journey, interests grid.
+- Full single-page portfolio with all 7 sections, scroll-reveal animations, animated stat counters, experience timeline, project cards + animated bar chart, education journey, interests grid.
 - Streaming AI chatbot "Ask Shreyshth" (Claude Sonnet via Emergent key), suggested prompt pills, persisted history, plain-text replies.
-- Download CV = placeholder toast (no PDF yet); contact links (email/LinkedIn/phone) wired.
-- Tested: backend SSE 3/3 pytest pass, frontend flows 100%. Fixed chat-button/badge overlap, markdown stripping, logger ordering, message length cap.
+- Tested: backend SSE 3/3 pytest pass, frontend flows 100%.
+
+## Iteration 2 (2026-06-30)
+- Read 5 uploaded resumes; rebuilt content with strongest points + CFA Level I, consulting/asset-management framing, regrouped skills (Finance & Valuation / Data & Analytics / Tools & Programming / Research & Communication).
+- Added: sticky Navbar with scroll-progress + mobile hamburger menu; hero action buttons (View Resume / Contact Me / LinkedIn / Email); real downloadable CV at /Shreyshth-Sharma-CV.pdf; working contact form (POST /api/contact, stored in contact_messages); skills marquee ticker; hero greeting + name pronunciation.
+- Added real personal photos (hosted in /public/images): About (2) + Education graduation photo.
+- Tested: backend 8/8 pytest (contact + chat), frontend ~100%; fixed broken grad image (now local). Chat button repositioned above Emergent badge.
 
 ## Backlog
-- P1: Real CV PDF upload + wired download. Real portrait photo (currently stock placeholder).
-- P2: Rate limiting on /api/chat/stream. Slugified testids for prompt pills. Mobile fine-tune of chat window height.
+- P1: EmailStr validation + rate limiting on public /api/contact form. Email notification on new contact message (Resend/SendGrid).
+- P2: True mobile device QA pass. Optional projects detail pages.
 
 ## Next Tasks
 - Replace placeholder portrait + CV when user provides files.

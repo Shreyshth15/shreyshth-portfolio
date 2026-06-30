@@ -57,6 +57,15 @@ export default function Hero() {
 
       {/* name */}
       <div className="relative flex flex-1 flex-col justify-center py-14">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.05, duration: 0.6 }}
+          className="mb-5 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-blue-400"
+        >
+          <span className="h-px w-8 bg-blue-500/60" />
+          {PROFILE.greeting}
+        </motion.div>
         <div className="overflow-hidden">
           <h1 className="font-display text-[17vw] font-extrabold uppercase leading-[0.82] tracking-tighter text-slate-50 sm:text-[15vw] md:text-[12vw] lg:text-[10.5vw]">
             <span className="block">
@@ -77,10 +86,19 @@ export default function Hero() {
         </div>
 
         <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.85, duration: 0.6 }}
+          className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-slate-500"
+        >
+          Shreyshth · <span className="text-slate-300">/{PROFILE.pronunciation}/</span> · {PROFILE.role}
+        </motion.p>
+
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.7 }}
-          className="mt-8 max-w-2xl font-serif text-lg italic leading-relaxed text-slate-300 md:text-xl"
+          className="mt-5 max-w-2xl font-serif text-lg italic leading-relaxed text-slate-300 md:text-xl"
         >
           {PROFILE.shortBio}
         </motion.p>

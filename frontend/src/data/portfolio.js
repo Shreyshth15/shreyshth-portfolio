@@ -3,6 +3,8 @@ export const PROFILE = {
   firstName: "Shreyshth",
   lastName: "Sharma",
   role: "Finance · Analytics · Research",
+  pronunciation: "shraysh-th",
+  greeting: "Hello, I'm",
   est: "2002",
   location: "Bloomington, IN",
   timezone: "America/Indiana/Indianapolis",
@@ -21,12 +23,9 @@ export const PROFILE = {
 };
 
 export const PHOTOS = {
-  portraitPrimary:
-    "https://customer-assets.emergentagent.com/job_ai-craftsman-8/artifacts/tabpi2ou_WhatsApp%20Image%202026-06-30%20at%2000.04.36%20%281%29.jpeg",
-  portraitSecondary:
-    "https://customer-assets.emergentagent.com/job_ai-craftsman-8/artifacts/e4o8acbw_WhatsApp%20Image%202026-06-30%20at%2000.04.36%20%282%29.jpeg",
-  graduation:
-    "https://customer-assets.emergentagent.com/job_ai-craftsman-8/artifacts/zq69hop0_WhatsApp%20Image%202026-06-30%20at%2000.04.36%20%283%29.jpeg",
+  portraitPrimary: "/images/iu-wylie.jpg",
+  portraitSecondary: "/images/iu-wall.jpg",
+  graduation: "/images/grad-stage.jpg",
 };
 
 export const ABOUT = {
