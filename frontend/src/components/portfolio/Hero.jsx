@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, FileText, Linkedin, MessageSquare } from "lucide-react";
 import { PROFILE } from "../../data/portfolio";
+import HeroBackground from "./HeroBackground";
 
 const Col = ({ heading, children }) => (
   <div>
@@ -20,6 +21,7 @@ export default function Hero() {
     >
       <div className="pointer-events-none absolute -right-40 top-0 h-[520px] w-[520px] rounded-full bg-blue-600/20 blur-[140px]" />
       <div className="pointer-events-none absolute -left-32 bottom-20 h-[380px] w-[380px] rounded-full bg-indigo-700/10 blur-[120px]" />
+      <HeroBackground />
 
       {/* top status bar */}
       <div className="relative flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-5 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-400 sm:text-[11px]">
