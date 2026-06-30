@@ -78,7 +78,7 @@ export default function Projects() {
 
               {p.chart && <Chart chart={p.chart} />}
 
-              {p.index === "02" && <UbiSimulator />}
+              {p.interactive === "ubi" && <UbiSimulator />}
 
               <div className="mt-6 flex flex-wrap items-center gap-2">
                 <span className="mr-1 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">Tools</span>

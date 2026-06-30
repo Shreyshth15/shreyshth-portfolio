@@ -33,7 +33,7 @@ export default function UbiSimulator() {
       </div>
 
       <div className="mt-5 h-[200px] w-full">
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="100%" minHeight={200}>
           <ComposedChart data={data} margin={{ top: 8, right: 8, left: -18, bottom: 0 }}>
             <defs>
               <linearGradient id="ubiBand" x1="0" y1="0" x2="0" y2="1">
@@ -59,7 +59,7 @@ export default function UbiSimulator() {
             />
             <Area dataKey="band" stroke="none" fill="url(#ubiBand)" isAnimationActive={false} />
             <Line dataKey="central" stroke="#3b82f6" strokeWidth={2} dot={false} isAnimationActive={false} />
-            <ReferenceDot x={Math.round(e * 10) / 10} y={central} r={5} fill="#3b82f6" stroke="#e2e8f0" strokeWidth={2} isFront />
+            <ReferenceDot x={e} y={central} r={5} fill="#3b82f6" stroke="#e2e8f0" strokeWidth={2} isFront />
           </ComposedChart>
         </ResponsiveContainer>
       </div>

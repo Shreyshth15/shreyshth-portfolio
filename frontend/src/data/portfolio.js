@@ -156,6 +156,7 @@ export const PROJECTS = [
       approach: "Built a Python simulation running the policy across a range of labor-supply elasticities, with full sensitivity analysis.",
       result: "A sensitivity band instead of a single misleading estimate, an honest read of how much the answer depends on assumptions.",
     },
+    interactive: "ubi",
     tags: ["Python", "Econometrics", "Sensitivity Analysis", "Policy Modeling"],
   },
 ];
