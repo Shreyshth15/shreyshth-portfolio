@@ -1,34 +1,5 @@
-import { useEffect, useRef, useState } from "react";
 import { SectionShell, Reveal } from "./shared";
 import { ABOUT, PHOTOS } from "../../data/portfolio";
-
-const Counter = ({ value }) => {
-  const numeric = parseInt(value, 10);
-  const [display, setDisplay] = useState(isNaN(numeric) ? value : "0");
-  const ref = useRef(null);
-  const done = useRef(false);
-
-  useEffect(() => {
-    if (isNaN(numeric)) return;
-    const el = ref.current;
-    const obs = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && !done.current) {
-        done.current = true;
-        let cur = 0;
-        const step = Math.max(1, Math.ceil(numeric / 30));
-        const id = setInterval(() => {
-          cur += step;
-          if (cur >= numeric) { cur = numeric; clearInterval(id); }
-          setDisplay(String(cur));
-        }, 30);
-      }
-    }, { threshold: 0.5 });
-    if (el) obs.observe(el);
-    return () => obs.disconnect();
-  }, [numeric]);
-
-  return <span ref={ref}>{display}</span>;
-};
 
 export default function About() {
   return (
@@ -78,9 +49,7 @@ export default function About() {
       <div className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-4">
         {ABOUT.stats.map((s) => (
           <div key={s.label} className="bg-[#050b1c] p-6 md:p-8" data-testid={`stat-${s.label}`}>
-            <p className="font-display text-4xl font-bold text-slate-50 md:text-5xl">
-              <Counter value={s.value} />
-            </p>
+            <p className="font-display text-3xl font-bold text-slate-50 md:text-5xl">{s.value}</p>
             <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.15em] text-slate-500">{s.label}</p>
           </div>
         ))}

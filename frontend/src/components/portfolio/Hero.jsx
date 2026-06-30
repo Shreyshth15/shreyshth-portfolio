@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowUpRight, FileText, Mail, Linkedin, MessageSquare } from "lucide-react";
+import { ArrowDown, ArrowUpRight, FileText, Linkedin, MessageSquare } from "lucide-react";
 import { PROFILE } from "../../data/portfolio";
 
 const useClock = (timezone) => {
@@ -89,9 +89,9 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.85, duration: 0.6 }}
-          className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-slate-500"
+          className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-slate-400"
         >
-          Shreyshth · <span className="text-slate-300">/{PROFILE.pronunciation}/</span> · {PROFILE.role}
+          Shreyshth Sharma · <span className="text-slate-300">{PROFILE.tagline}</span>
         </motion.p>
 
         <motion.p
@@ -131,19 +131,24 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             data-testid="hero-linkedin"
-            aria-label="LinkedIn"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-slate-200 transition-colors hover:border-blue-500/60 hover:text-blue-400"
+            className="group inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 font-mono text-xs uppercase tracking-[0.14em] text-slate-100 transition-colors duration-300 hover:border-blue-500/60 hover:text-white"
           >
-            <Linkedin className="h-4 w-4" />
+            <Linkedin className="h-4 w-4" /> LinkedIn
           </a>
-          <a
-            href={`mailto:${PROFILE.email}`}
-            data-testid="hero-email"
-            aria-label="Email"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-slate-200 transition-colors hover:border-blue-500/60 hover:text-blue-400"
-          >
-            <Mail className="h-4 w-4" />
-          </a>
+        </motion.div>
+
+        {/* focus tags */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.15, duration: 0.6 }}
+          className="mt-6 flex flex-wrap gap-2"
+        >
+          {PROFILE.heroTags.map((t) => (
+            <span key={t} className="rounded-full border border-white/12 bg-white/[0.03] px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-slate-300">
+              {t}
+            </span>
+          ))}
         </motion.div>
       </div>
 

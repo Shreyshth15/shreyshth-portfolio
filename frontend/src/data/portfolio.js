@@ -2,8 +2,8 @@ export const PROFILE = {
   name: "Shreyshth Sharma",
   firstName: "Shreyshth",
   lastName: "Sharma",
-  role: "Finance · Analytics · Research",
-  pronunciation: "shraysh-th",
+  role: "Finance · Analytics · Investment Research",
+  tagline: "Finance · Analytics · Investment Research",
   greeting: "Hello, I'm",
   est: "2002",
   location: "Bloomington, IN",
@@ -16,7 +16,8 @@ export const PROFILE = {
   linkedinLabel: "/in/shreyshth-sharma-0170",
   resumeUrl: "/Shreyshth-Sharma-CV.pdf",
   shortBio:
-    "Economics & Quantitative Methods graduate and CFA Level I candidate, turning messy, multi-source data into decision-ready research, from Bloomington, by way of New Delhi.",
+    "Economics & Quantitative Methods graduate from Indiana University Bloomington, focused on finance, asset management, analytics and investment research. I turn messy data, market information and business problems into clear, decision-ready analysis.",
+  heroTags: ["Finance", "Analytics", "Asset Management", "Credit Research"],
   built: ["Intel Site-Selection Models", "UBI Labor-Supply Simulation", "Investor Research Decks"],
   workedWith: ["Advanced Excel", "Tableau", "Python", "SQL", "R"],
   openTo: ["Asset Management", "Credit Research", "Consulting"],
@@ -36,40 +37,39 @@ export const ABOUT = {
     { label: "Status", value: "Open to work" },
   ],
   paragraphs: [
-    "I grew up in New Delhi and crossed the world to study Economics & Quantitative Methods at Indiana University Bloomington, with a minor in Psychology. Somewhere between a Money & Banking lecture and my first valuation model, the abstract turned concrete: markets are enormous systems of incentives, and the people who read them well are the ones who can find the signal under the noise.",
-    "I'm happiest with a messy, multi-source dataset and a blank spreadsheet. At The Global Tech Experience I stitched energy and infrastructure data into a comparison framework that fed Intel's data-center site-selection across five locations. At Marquee Equity I researched 8+ early and growth-stage companies and translated dense sector reports into narratives investors could actually decide on. The thread is constant: take the complicated thing, make it clear, make it useful.",
-    "The Psychology minor isn't a footnote, it's the behavioral lens behind the numbers. Markets are run by people, and understanding why they act sharpens every model I build. Pair that with an LSE summer in econometrics and the CFA Level I curriculum, and the quantitative spine and the judgment grow together.",
-    "Right now I'm finishing my degree, sitting CFA Level I, and aiming at asset management, credit research and consulting. The goal isn't a dashboard for its own sake, it's rigor someone can act on with confidence, and a recommendation that makes the next decision obvious.",
+    "I grew up in New Delhi and moved to the United States to study Economics & Quantitative Methods at Indiana University Bloomington, with a minor in Psychology. My work sits at the intersection of finance, data and decision-making: valuation, market research, dashboards and clear reporting.",
+    "Across experiences at Marquee Equity, DLF, nTalents.ai and The Global Tech Experience, I've worked with company research, financial analysis, SQL/Python workflows, Tableau dashboards and client-facing reporting. The common thread is simple: take complex information, find the signal, and turn it into something useful.",
+    "My psychology background adds a behavioral lens to markets and business decisions. Models matter, but so do incentives, judgment and communication.",
   ],
-  quote: "Quantitative rigor only matters if the answer is clear enough to act on.",
+  quote: "Take complex information, find the signal, and turn it into something useful.",
   stats: [
     { value: "4", label: "Internships" },
-    { value: "8", label: "Startups researched" },
-    { value: "3", label: "Languages" },
-    { value: "5", label: "Intel site models" },
+    { value: "8+", label: "Companies Researched" },
+    { value: "5", label: "Intel Site Models" },
+    { value: "Global", label: "Background" },
   ],
 };
 
 export const SKILLS = [
   {
     key: "a.",
-    title: "Finance & Valuation",
-    items: ["Financial Statement Analysis", "Valuation Fundamentals", "Fixed-Income & Credit", "Equity & Sector Research", "Performance & Attribution", "CFA Level I Curriculum"],
+    title: "Finance & Markets",
+    items: ["Financial Analysis", "Valuation", "Credit Research", "Investment Research", "Fixed Income", "CFA Curriculum"],
   },
   {
     key: "b.",
-    title: "Data & Analytics",
-    items: ["Multi-source Data Analysis", "KPI Dashboard Design", "Statistical Analysis", "Econometrics", "ML for Economic Data", "Exploratory Analysis"],
+    title: "Analytics",
+    items: ["Statistical Analysis", "Econometrics", "Dashboarding", "Multi-source Data Analysis", "KPI Reporting"],
   },
   {
     key: "c.",
-    title: "Tools & Programming",
-    items: ["Advanced Excel", "PowerPoint", "Tableau", "SQL", "Python", "R", "Generative AI"],
+    title: "Tools",
+    items: ["Excel", "PowerPoint", "Tableau", "SQL", "Python", "R"],
   },
   {
     key: "d.",
-    title: "Research & Communication",
-    items: ["Investor-facing Materials", "Executive Reporting", "Client Reporting", "Stakeholder Coordination", "Data Storytelling", "Requirements Documentation"],
+    title: "Communication",
+    items: ["Investor Materials", "Client Reporting", "Data Storytelling", "Stakeholder Updates"],
   },
 ];
 
@@ -79,40 +79,40 @@ export const EXPERIENCE = [
     role: "Investment Research Fellow",
     company: "Marquee Equity · New Delhi, IN",
     paragraphs: [
-      "Researched 8+ early and growth-stage companies across TMT, consumer goods, education and B2B services, analyzing sector trends, funding momentum and competitive positioning to support fundraising and investor outreach.",
-      "Translated company and sector research into clear, investor-facing narratives that informed mandate selection and deal prioritization across the team pipeline.",
+      "Researched 8+ early and growth-stage companies across TMT, consumer, education and B2B, assessing sector trends, funding momentum and competitive positioning.",
+      "Turned company and sector research into investor-facing narratives that informed mandate selection and deal prioritization.",
     ],
-    tags: ["Equity Research", "Valuation", "Sector Analysis", "Investor Decks"],
+    tags: ["Equity Research", "Valuation", "Investor Decks"],
   },
   {
     period: "Jan 2025 — May 2025",
     role: "Data Analytics Trainee",
     company: "The Global Tech Experience · Bloomington, IN",
     paragraphs: [
-      "Built Tableau and Excel dashboards synthesizing large, multi-source energy and infrastructure datasets into a clear comparative framework, supporting Intel's data-center site-selection decision across five candidate locations.",
-      "Automated data cleaning, reporting and documentation with Python and generative AI, cutting manual processing time, and packaged campaign data into executive-ready reporting that surfaced three engagement drop-off points and top-performing segments.",
+      "Built Tableau and Excel dashboards from multi-source energy and infrastructure data to support Intel's data-center site selection across five locations.",
+      "Automated cleaning and reporting in Python, cutting manual prep and surfacing three engagement drop-off points in executive-ready reporting.",
     ],
-    tags: ["Tableau", "Python", "GenAI", "Intel Project"],
+    tags: ["Tableau", "Python", "Intel Project"],
   },
   {
     period: "Aug 2023 — Oct 2023",
     role: "Finance & Operations Intern",
     company: "DLF Limited · Gurugram, IN",
     paragraphs: [
-      "Built Excel reporting templates that standardized expense categorization and shortened the monthly close, reducing manual errors and reconciliation issues.",
-      "Analyzed vendor and departmental spending across three months; the findings fed a cost review credited with roughly 10% lower monthly operating costs.",
+      "Standardized expense reporting with Excel templates that shortened the monthly close and reduced reconciliation errors.",
+      "Analyzed vendor and departmental spend; findings fed a cost review credited with ~10% lower monthly operating costs.",
     ],
-    tags: ["FP&A", "Excel", "Cost Analysis", "Reporting"],
+    tags: ["FP&A", "Excel", "Cost Analysis"],
   },
   {
     period: "Jun 2023 — Jul 2023",
     role: "Data Analytics Intern",
     company: "nTalents.ai · Bangalore, IN",
     paragraphs: [
-      "Built client-facing dashboards and ran SQL and Python analysis across tens of thousands of records for 3+ enterprise clients, surfacing process bottlenecks previously tracked manually.",
-      "Packaged findings into stakeholder presentations, contributing to roughly 15% higher client satisfaction.",
+      "Ran SQL and Python analysis across tens of thousands of records for 3+ enterprise clients and built client-facing dashboards.",
+      "Packaged findings into stakeholder presentations, contributing to ~15% higher client satisfaction.",
     ],
-    tags: ["SQL", "Python", "EDA", "Client Dashboards"],
+    tags: ["SQL", "Python", "Dashboards"],
   },
 ];
 
@@ -126,10 +126,11 @@ export const PROJECTS = [
       { label: "Type", value: "Industry Project · TGTE" },
       { label: "Stack", value: "Tableau, Excel, Python" },
     ],
-    paragraphs: [
-      "A comparative decision framework for where Intel should locate a new data center. I pulled energy pricing, grid reliability and infrastructure data from multiple sources for five candidate locations, normalized it, and built Tableau dashboards that scored each site on a single, comparable scale.",
-      "The win wasn't the model, it was the clarity. Automating the cleaning pipeline in Python collapsed days of manual prep, so the conversation could move from \"is the data right?\" to \"which site, and why?\"",
-    ],
+    breakdown: {
+      problem: "Intel had to choose one of five candidate locations for a new data center, with energy, grid and infrastructure data scattered across sources.",
+      approach: "Normalized multi-source data and built Tableau dashboards that scored every site on a single comparable scale, with the prep pipeline automated in Python.",
+      result: "A clear, defensible site ranking, with days of manual prep collapsed to minutes per refresh.",
+    },
     chart: {
       title: "Manual prep time per refresh · hours",
       bars: [
@@ -150,25 +151,26 @@ export const PROJECTS = [
       { label: "Type", value: "Independent Project · IU" },
       { label: "Stack", value: "Python, NumPy, Pandas" },
     ],
-    paragraphs: [
-      "A Python simulation modeling how a Universal Basic Income would shift labor supply across different elasticity assumptions. Rather than a single point estimate, it runs the policy across a range of behavioral responses and reports how sensitive the outcome is to each.",
-      "The takeaway is the honest one: the answer to \"does UBI reduce work?\" depends almost entirely on an elasticity nobody can observe directly, so the useful output is the sensitivity band, not a headline number.",
-    ],
+    breakdown: {
+      problem: "Whether a Universal Basic Income reduces labor supply depends on behavioral assumptions nobody can observe directly.",
+      approach: "Built a Python simulation running the policy across a range of labor-supply elasticities, with full sensitivity analysis.",
+      result: "A sensitivity band instead of a single misleading estimate, an honest read of how much the answer depends on assumptions.",
+    },
     tags: ["Python", "Econometrics", "Sensitivity Analysis", "Policy Modeling"],
   },
   {
     index: "03",
-    status: "In the queue",
-    title: "More on the Way",
+    status: "Ongoing",
+    title: "Market Research & Fixed-Income Studies",
     meta: [
-      { label: "Status", value: "Building" },
+      { label: "Status", value: "In progress" },
       { label: "Focus", value: "Credit & markets" },
       { label: "Updated", value: "Regularly" },
     ],
     paragraphs: [
-      "Always working on something, mostly fixed-income studies, valuation models and small market-data tools as I move through the CFA program. Reach out if you'd like to know what's on the desk right now.",
+      "An ongoing set of valuation models, fixed-income studies and market-research notes built alongside the CFA curriculum. Reach out if you'd like to see what's on the desk right now.",
     ],
-    tags: ["Fixed Income", "Valuation", "Market Data"],
+    tags: ["Fixed Income", "Valuation", "Market Research"],
   },
 ];
 
@@ -180,10 +182,10 @@ export const EDUCATION = [
     text: "Born and raised. Where the curiosity for systems, incentives and markets got its early footing, long before economics was a degree on paper.",
   },
   {
-    tag: "Current",
+    tag: "Degree",
     place: "Bloomington",
     region: "Indiana University · 2022 — 2026",
-    text: "B.S. Economics & Quantitative Methods (STEM), Minor in Psychology, graduating May 2026. Coursework in Money & Banking, Machine Learning for Economic Data, Computational Macro, Game Theory and Econometrics. Executive Dean's List; Finance Chair, Principles of Cybersecurity.",
+    text: "B.S. Economics & Quantitative Methods (STEM), Minor in Psychology. Graduated May 2026. Coursework in Money & Banking, Machine Learning for Economic Data, Computational Macro, Game Theory and Econometrics. Executive Dean's List; Finance Chair, Principles of Cybersecurity.",
   },
   {
     tag: "Exchange",
@@ -192,10 +194,10 @@ export const EDUCATION = [
     text: "A London School of Economics summer in Intermediate Macroeconomics and Introduction to Econometrics, the quantitative spine of how I read data today.",
   },
   {
-    tag: "Credential",
+    tag: "Markets",
     place: "CFA Program",
-    region: "Level I Candidate · Feb 2026",
-    text: "Building fixed-income and markets fluency through the CFA curriculum, ethics, financial reporting, equity and fixed income, alongside the degree.",
+    region: "Fixed Income & Markets · 2026",
+    text: "Building my fixed-income and markets foundation through the CFA curriculum, ethics, financial reporting, equity and fixed income, alongside the degree.",
   },
 ];
 
@@ -218,12 +220,12 @@ export const SECTIONS = [
 
 export const MARQUEE = [
   "Asset Management", "Credit Research", "Valuation", "Tableau", "Python", "SQL",
-  "Econometrics", "CFA Level I", "Fixed Income", "Investment Research", "Consulting", "Advanced Excel",
+  "Econometrics", "Investment Research", "Fixed Income", "Financial Analysis", "Consulting", "Advanced Excel",
 ];
 
 export const CHAT_PROMPTS = [
-  "What's his valuation experience?",
-  "Tell me about the Intel project",
-  "Why should I hire him?",
-  "Is he CFA certified?",
+  "What roles is he targeting?",
+  "What are his strongest skills?",
+  "Tell me about his Intel project",
+  "How can I contact him?",
 ];
