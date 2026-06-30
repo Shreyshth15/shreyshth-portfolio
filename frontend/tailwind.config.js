@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        display: ['Cabinet Grotesk', 'IBM Plex Sans', 'sans-serif'],
+        body: ['IBM Plex Sans', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+        serif: ['Playfair Display', 'serif'],
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',

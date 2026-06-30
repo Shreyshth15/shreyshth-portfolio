@@ -1,72 +1,149 @@
 from fastapi import FastAPI, APIRouter
+from fastapi.responses import StreamingResponse
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
+import json
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
-from typing import List
+from pydantic import BaseModel, Field
+from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
 
+from emergentintegrations.llm.chat import LlmChat, UserMessage, TextDelta, StreamDone
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-# MongoDB connection
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
-# Create the main app without a prefix
-app = FastAPI()
+EMERGENT_LLM_KEY = os.environ['EMERGENT_LLM_KEY']
 
-# Create a router with the /api prefix
+app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
+SYSTEM_PROMPT = """You are "Ash", the friendly AI assistant embedded on Shreyshth Sharma's personal portfolio website. You answer questions about Shreyshth on his behalf, in a warm, sharp, concise voice. Speak about him in the third person ("he", "Shreyshth"). Keep answers short (1-3 sentences usually), confident and specific. If asked something unrelated to Shreyshth or his work, gently steer back. Never invent facts beyond the profile below.
 
-# Define Models
+PROFILE — SHREYSHTH SHARMA
+- Economics & Quantitative Methods graduate (STEM-designated) from Indiana University Bloomington, Minor in Psychology, graduating May 2026.
+- Based in Bloomington, IN, USA. Originally from New Delhi, India.
+- Targeting roles in credit research, structured finance, and asset management / portfolio & performance analytics, plus finance-adjacent consulting.
+- Building his fixed-income and markets foundation through the CFA program.
+- Contact: shshar@iu.edu / Shreshth2002@gmail.com, +1 (240) 733-5436, linkedin.com/in/shreyshth-sharma-0170.
+
+CORE SKILLS
+- Research & Analysis: company/sector/credit research, financial statement analysis, valuation, fixed-income fundamentals.
+- Reporting & Tools: Advanced Excel & PowerPoint, Tableau dashboards, SQL, Python, R; multi-source data analysis, client reporting.
+- Quantitative: statistical analysis, machine learning for economic data, econometrics, game theory, computational macroeconomics.
+- Languages: English (fluent), Hindi (native), Punjabi (native), Spanish (basic).
+
+EXPERIENCE
+1. Marquee Equity — Investment Research Fellow (New Delhi, Jul 2022 - Jun 2023): researched early/growth-stage companies across TMT, consumer goods, education, B2B services; built sector and company research that informed mandate selection and deal prioritization; prepared investor-facing materials.
+2. The Global Tech Experience — Data Analytics Trainee (Bloomington, IN, Jan 2025 - May 2025): built Tableau and Excel dashboards synthesizing large multi-source energy and infrastructure datasets to support Intel's data-center site-selection across five candidate locations; automated cleaning/reporting with Python; surfaced engagement drop-off points.
+3. DLF Limited — Finance & Operations Intern (Gurugram, Aug 2023 - Nov 2023): built Excel reporting templates that shortened the monthly close; analyzed vendor and departmental spend, feeding a cost review credited with ~10% lower monthly operating costs.
+4. nTalents.ai — Data Analyst Intern (Bangalore, Jun 2023 - Jul 2023): ran SQL and Python analysis across tens of thousands of records; built client dashboards contributing to ~15% higher client satisfaction.
+
+EDUCATION & HONORS
+- Indiana University Bloomington, B.S. Economics & Quantitative Methods (STEM), Minor Psychology, May 2026. Coursework: Money & Banking, Machine Learning for Economic Data, Computational Methods in Macroeconomics, Game Theory, Statistical Analysis, International Trade.
+- London School of Economics exchange (Jul - Aug 2024): Intermediate Macroeconomics, Introduction to Econometrics.
+- Executive Dean's List (College of Arts + Sciences). Finance Chair, Principles of Cybersecurity (managed ~$2K/semester budget, coordinated events of 60+ attendees with EY, AT&T, Accenture).
+- Project: Python simulation modeling UBI's labor-supply effects across elasticity levels with sensitivity analysis.
+
+INTERESTS: markets and macro, football, philosophy, fitness.
+
+When users ask "why should I hire him", emphasize the blend of quantitative rigor (Python, SQL, econometrics) with clear client-facing communication and real investment-research experience across two continents."""
+
+
+class ChatRequest(BaseModel):
+    session_id: Optional[str] = None
+    message: str
+
+
 class StatusCheck(BaseModel):
-    model_config = ConfigDict(extra="ignore")  # Ignore MongoDB's _id field
-    
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     client_name: str
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
+
 class StatusCheckCreate(BaseModel):
     client_name: str
 
-# Add your routes to the router instead of directly to app
+
 @api_router.get("/")
 async def root():
     return {"message": "Hello World"}
 
+
+@api_router.post("/chat/stream")
+async def chat_stream(req: ChatRequest):
+    session_id = req.session_id or str(uuid.uuid4())
+
+    chat = LlmChat(
+        api_key=EMERGENT_LLM_KEY,
+        session_id=session_id,
+        system_message=SYSTEM_PROMPT,
+    ).with_model("anthropic", "claude-sonnet-4-6")
+
+    user_message = UserMessage(text=req.message)
+
+    await db.chat_messages.insert_one({
+        "session_id": session_id,
+        "role": "user",
+        "content": req.message,
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+    })
+
+    async def event_generator():
+        full = ""
+        yield f"data: {json.dumps({'session_id': session_id})}\n\n"
+        try:
+            async for ev in chat.stream_message(user_message):
+                if isinstance(ev, TextDelta):
+                    full += ev.content
+                    yield f"data: {json.dumps({'delta': ev.content})}\n\n"
+                elif isinstance(ev, StreamDone):
+                    break
+        except Exception as e:
+            logger.error(f"chat stream error: {e}")
+            yield f"data: {json.dumps({'error': 'Something went wrong. Please try again.'})}\n\n"
+        else:
+            await db.chat_messages.insert_one({
+                "session_id": session_id,
+                "role": "assistant",
+                "content": full,
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+            })
+        yield f"data: {json.dumps({'done': True})}\n\n"
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )
+
+
 @api_router.post("/status", response_model=StatusCheck)
 async def create_status_check(input: StatusCheckCreate):
-    status_dict = input.model_dump()
-    status_obj = StatusCheck(**status_dict)
-    
-    # Convert to dict and serialize datetime to ISO string for MongoDB
+    status_obj = StatusCheck(**input.model_dump())
     doc = status_obj.model_dump()
     doc['timestamp'] = doc['timestamp'].isoformat()
-    
-    _ = await db.status_checks.insert_one(doc)
+    await db.status_checks.insert_one(doc)
     return status_obj
+
 
 @api_router.get("/status", response_model=List[StatusCheck])
 async def get_status_checks():
-    # Exclude MongoDB's _id field from the query results
     status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
-    
-    # Convert ISO string timestamps back to datetime objects
     for check in status_checks:
         if isinstance(check['timestamp'], str):
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
-    
     return status_checks
 
-# Include the router in the main app
+
 app.include_router(api_router)
 
 app.add_middleware(
@@ -77,12 +154,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
