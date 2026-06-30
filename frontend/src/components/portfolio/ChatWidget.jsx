@@ -45,7 +45,8 @@ export default function ChatWidget() {
         for (const part of parts) {
           const line = part.replace(/^data: /, "").trim();
           if (!line) continue;
-          const data = JSON.parse(line);
+          let data;
+          try { data = JSON.parse(line); } catch { continue; }
           if (data.session_id) setSessionId(data.session_id);
           if (data.delta) {
             setMessages((m) => {
@@ -82,7 +83,7 @@ export default function ChatWidget() {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1.4, type: "spring", stiffness: 200, damping: 18 }}
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-blue-500 px-5 py-3.5 font-mono text-xs uppercase tracking-[0.14em] text-white shadow-lg shadow-blue-500/30 transition-colors hover:bg-blue-400"
+        className="fixed bottom-24 right-6 z-50 flex items-center gap-2 rounded-full bg-blue-500 px-5 py-3.5 font-mono text-xs uppercase tracking-[0.14em] text-white shadow-lg shadow-blue-500/30 transition-colors hover:bg-blue-400"
       >
         {open ? <X className="h-4 w-4" /> : <MessageSquare className="h-4 w-4" />}
         {open ? "Close" : "Ask Shreyshth"}
@@ -96,7 +97,7 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.96 }}
             transition={{ type: "spring", stiffness: 220, damping: 22 }}
-            className="fixed bottom-24 right-6 z-50 flex h-[560px] max-h-[80vh] w-[calc(100vw-3rem)] max-w-[400px] flex-col overflow-hidden rounded-2xl border border-white/12 bg-[#070d1f] shadow-2xl"
+            className="fixed bottom-44 right-6 z-50 flex h-[540px] max-h-[72vh] w-[calc(100vw-3rem)] max-w-[400px] flex-col overflow-hidden rounded-2xl border border-white/12 bg-[#070d1f] shadow-2xl"
           >
             <div className="flex items-center gap-3 border-b border-white/10 px-5 py-4">
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-500 font-display text-sm font-bold text-white">A</span>

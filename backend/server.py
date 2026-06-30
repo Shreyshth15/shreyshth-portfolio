@@ -23,10 +23,13 @@ db = client[os.environ['DB_NAME']]
 
 EMERGENT_LLM_KEY = os.environ['EMERGENT_LLM_KEY']
 
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
-SYSTEM_PROMPT = """You are "Ash", the friendly AI assistant embedded on Shreyshth Sharma's personal portfolio website. You answer questions about Shreyshth on his behalf, in a warm, sharp, concise voice. Speak about him in the third person ("he", "Shreyshth"). Keep answers short (1-3 sentences usually), confident and specific. If asked something unrelated to Shreyshth or his work, gently steer back. Never invent facts beyond the profile below.
+SYSTEM_PROMPT = """You are "Ash", the friendly AI assistant embedded on Shreyshth Sharma's personal portfolio website. You answer questions about Shreyshth on his behalf, in a warm, sharp, concise voice. Speak about him in the third person ("he", "Shreyshth"). Keep answers short (1-3 sentences usually), confident and specific. Reply in plain conversational text only — no markdown, asterisks, bullet symbols or headings. If asked something unrelated to Shreyshth or his work, gently steer back. Never invent facts beyond the profile below.
 
 PROFILE — SHREYSHTH SHARMA
 - Economics & Quantitative Methods graduate (STEM-designated) from Indiana University Bloomington, Minor in Psychology, graduating May 2026.
@@ -60,7 +63,7 @@ When users ask "why should I hire him", emphasize the blend of quantitative rigo
 
 class ChatRequest(BaseModel):
     session_id: Optional[str] = None
-    message: str
+    message: str = Field(..., min_length=1, max_length=2000)
 
 
 class StatusCheck(BaseModel):
@@ -111,12 +114,13 @@ async def chat_stream(req: ChatRequest):
             logger.error(f"chat stream error: {e}")
             yield f"data: {json.dumps({'error': 'Something went wrong. Please try again.'})}\n\n"
         else:
-            await db.chat_messages.insert_one({
-                "session_id": session_id,
-                "role": "assistant",
-                "content": full,
-                "timestamp": datetime.now(timezone.utc).isoformat(),
-            })
+            if full.strip():
+                await db.chat_messages.insert_one({
+                    "session_id": session_id,
+                    "role": "assistant",
+                    "content": full,
+                    "timestamp": datetime.now(timezone.utc).isoformat(),
+                })
         yield f"data: {json.dumps({'done': True})}\n\n"
 
     return StreamingResponse(
@@ -153,9 +157,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
 
 
 @app.on_event("shutdown")
