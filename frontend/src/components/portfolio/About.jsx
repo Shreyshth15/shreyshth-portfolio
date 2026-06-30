@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { SectionShell, Reveal } from "./shared";
-import { ABOUT } from "../../data/portfolio";
+import { ABOUT, PHOTOS } from "../../data/portfolio";
 
 const Counter = ({ value }) => {
   const numeric = parseInt(value, 10);
@@ -18,10 +18,7 @@ const Counter = ({ value }) => {
         const step = Math.max(1, Math.ceil(numeric / 30));
         const id = setInterval(() => {
           cur += step;
-          if (cur >= numeric) {
-            cur = numeric;
-            clearInterval(id);
-          }
+          if (cur >= numeric) { cur = numeric; clearInterval(id); }
           setDisplay(String(cur));
         }, 30);
       }
@@ -33,7 +30,7 @@ const Counter = ({ value }) => {
   return <span ref={ref}>{display}</span>;
 };
 
-export default function About({ portraitUrl }) {
+export default function About() {
   return (
     <SectionShell id="about" number="01 / About" title={<>A short biography, told <span className="font-serif italic text-blue-400">honestly</span>.</>} data-testid="about-section">
       <div className="grid grid-cols-2 gap-x-8 gap-y-6 border-b border-white/10 pb-10 sm:grid-cols-4">
@@ -54,16 +51,26 @@ export default function About({ portraitUrl }) {
       </div>
 
       <Reveal className="mt-12">
-        <div className="overflow-hidden rounded-2xl border border-white/10">
-          <img
-            src={portraitUrl}
-            alt="Portrait of Shreyshth Sharma"
-            className="h-[340px] w-full object-cover grayscale transition-all duration-700 hover:grayscale-0 md:h-[440px]"
-            style={{ filter: "grayscale(1) contrast(1.05)" }}
-            data-testid="about-portrait"
-          />
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-5">
+          <div className="overflow-hidden rounded-2xl border border-white/10 sm:col-span-3">
+            <img
+              src={PHOTOS.portraitPrimary}
+              alt="Shreyshth Sharma at Indiana University"
+              loading="lazy"
+              className="h-[360px] w-full object-cover object-top transition-transform duration-700 hover:scale-[1.03] md:h-[460px]"
+              data-testid="about-portrait"
+            />
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-white/10 sm:col-span-2">
+            <img
+              src={PHOTOS.portraitSecondary}
+              alt="Shreyshth Sharma, IU College of Arts and Sciences"
+              loading="lazy"
+              className="h-[360px] w-full object-cover object-center transition-transform duration-700 hover:scale-[1.03] md:h-[460px]"
+            />
+          </div>
         </div>
-        <p className="mt-5 border-l-2 border-blue-500 pl-5 font-serif text-xl italic text-slate-200 md:text-2xl">
+        <p className="mt-6 border-l-2 border-blue-500 pl-5 font-serif text-xl italic text-slate-200 md:text-2xl">
           "{ABOUT.quote}"
         </p>
       </Reveal>

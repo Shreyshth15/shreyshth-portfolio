@@ -76,6 +76,22 @@ class StatusCheckCreate(BaseModel):
     client_name: str
 
 
+class ContactMessage(BaseModel):
+    name: str = Field(..., min_length=1, max_length=120)
+    email: str = Field(..., min_length=3, max_length=200)
+    message: str = Field(..., min_length=1, max_length=4000)
+
+
+@api_router.post("/contact")
+async def submit_contact(msg: ContactMessage):
+    doc = msg.model_dump()
+    doc["id"] = str(uuid.uuid4())
+    doc["timestamp"] = datetime.now(timezone.utc).isoformat()
+    await db.contact_messages.insert_one(doc)
+    logger.info(f"contact message from {msg.email}")
+    return {"ok": True, "id": doc["id"]}
+
+
 @api_router.get("/")
 async def root():
     return {"message": "Hello World"}

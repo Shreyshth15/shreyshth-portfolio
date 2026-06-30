@@ -2,7 +2,7 @@ export const PROFILE = {
   name: "Shreyshth Sharma",
   firstName: "Shreyshth",
   lastName: "Sharma",
-  role: "Quant & Finance Analyst",
+  role: "Finance · Analytics · Research",
   est: "2002",
   location: "Bloomington, IN",
   timezone: "America/Indiana/Indianapolis",
@@ -12,55 +12,65 @@ export const PROFILE = {
   phoneHref: "tel:+12407335436",
   linkedin: "https://www.linkedin.com/in/shreyshth-sharma-0170",
   linkedinLabel: "/in/shreyshth-sharma-0170",
+  resumeUrl: "/Shreyshth-Sharma-CV.pdf",
   shortBio:
-    "Economics & Quantitative Methods, STEM. Turning messy, multi-source data into decision-ready research, from Bloomington, by way of New Delhi.",
+    "Economics & Quantitative Methods graduate and CFA Level I candidate, turning messy, multi-source data into decision-ready research, from Bloomington, by way of New Delhi.",
   built: ["Intel Site-Selection Models", "UBI Labor-Supply Simulation", "Investor Research Decks"],
-  workedWith: ["Excel / VBA", "Tableau", "Python", "SQL", "R"],
-  openTo: ["Credit Research roles", "Asset Management analytics", "Structured Finance"],
+  workedWith: ["Advanced Excel", "Tableau", "Python", "SQL", "R"],
+  openTo: ["Asset Management", "Credit Research", "Consulting"],
+};
+
+export const PHOTOS = {
+  portraitPrimary:
+    "https://customer-assets.emergentagent.com/job_ai-craftsman-8/artifacts/tabpi2ou_WhatsApp%20Image%202026-06-30%20at%2000.04.36%20%281%29.jpeg",
+  portraitSecondary:
+    "https://customer-assets.emergentagent.com/job_ai-craftsman-8/artifacts/e4o8acbw_WhatsApp%20Image%202026-06-30%20at%2000.04.36%20%282%29.jpeg",
+  graduation:
+    "https://customer-assets.emergentagent.com/job_ai-craftsman-8/artifacts/zq69hop0_WhatsApp%20Image%202026-06-30%20at%2000.04.36%20%283%29.jpeg",
 };
 
 export const ABOUT = {
   facts: [
     { label: "Born", value: "New Delhi, IN" },
     { label: "Based", value: "Bloomington, IN" },
-    { label: "Studying", value: "Econ & Quant Methods" },
+    { label: "Degree", value: "B.S. Econ & Quant (STEM)" },
     { label: "Status", value: "Open to work" },
   ],
   paragraphs: [
-    "I grew up in New Delhi and crossed the world to study Economics & Quantitative Methods at Indiana University Bloomington. Somewhere between a money-and-banking lecture and my first valuation model, the abstract turned concrete: markets are just enormous systems of incentives, and the people who read them well are the ones who can see the signal under the noise.",
-    "I'm the person who's happiest with a messy, multi-source dataset and a blank spreadsheet. At The Global Tech Experience I stitched energy and infrastructure data into a comparison framework that fed Intel's data-center site-selection across five locations. At Marquee Equity I researched early and growth-stage companies and translated dense sector reports into narratives investors could actually decide on. The thread is the same everywhere: take the complicated thing, make it clear, make it useful.",
-    "Coming from Delhi to Bloomington reset my sense of how I work. An LSE summer in econometrics sharpened the quantitative half; the internships sharpened the judgment half. I learned that the model is only as good as the question, and that the most valuable output is rarely the analysis itself, it's the one slide that makes a decision obvious.",
-    "Right now I'm finishing my degree, building my fixed-income foundation through the CFA program, and aiming at credit research, structured finance, and asset-management analytics. The goal isn't a dashboard for its own sake. It's rigor that someone can act on with confidence.",
+    "I grew up in New Delhi and crossed the world to study Economics & Quantitative Methods at Indiana University Bloomington, with a minor in Psychology. Somewhere between a Money & Banking lecture and my first valuation model, the abstract turned concrete: markets are enormous systems of incentives, and the people who read them well are the ones who can find the signal under the noise.",
+    "I'm happiest with a messy, multi-source dataset and a blank spreadsheet. At The Global Tech Experience I stitched energy and infrastructure data into a comparison framework that fed Intel's data-center site-selection across five locations. At Marquee Equity I researched 8+ early and growth-stage companies and translated dense sector reports into narratives investors could actually decide on. The thread is constant: take the complicated thing, make it clear, make it useful.",
+    "The Psychology minor isn't a footnote, it's the behavioral lens behind the numbers. Markets are run by people, and understanding why they act sharpens every model I build. Pair that with an LSE summer in econometrics and the CFA Level I curriculum, and the quantitative spine and the judgment grow together.",
+    "Right now I'm finishing my degree, sitting CFA Level I, and aiming at asset management, credit research and consulting. The goal isn't a dashboard for its own sake, it's rigor someone can act on with confidence, and a recommendation that makes the next decision obvious.",
   ],
   quote: "Quantitative rigor only matters if the answer is clear enough to act on.",
   stats: [
     { value: "4", label: "Internships" },
-    { value: "2", label: "Countries worked in" },
-    { value: "3", label: "Languages fluent" },
-    { value: "1", label: "Goal: clarity" },
+    { value: "8", label: "Startups researched" },
+    { value: "3", label: "Languages" },
+    { value: "5", label: "Intel site models" },
   ],
 };
 
 export const SKILLS = [
   {
     key: "a.",
-    title: "Research & Analysis",
-    items: ["Company & Sector Research", "Credit Research", "Financial Statement Analysis", "Valuation", "Fixed-Income Fundamentals", "Investor Materials"],
+    title: "Finance & Valuation",
+    items: ["Financial Statement Analysis", "Valuation Fundamentals", "Fixed-Income & Credit", "Equity & Sector Research", "Performance & Attribution", "CFA Level I Curriculum"],
   },
   {
     key: "b.",
-    title: "Reporting & Tools",
-    items: ["Advanced Excel", "PowerPoint", "Tableau", "SQL", "Python", "R"],
+    title: "Data & Analytics",
+    items: ["Multi-source Data Analysis", "KPI Dashboard Design", "Statistical Analysis", "Econometrics", "ML for Economic Data", "Exploratory Analysis"],
   },
   {
     key: "c.",
-    title: "Quantitative Methods",
-    items: ["Statistical Analysis", "Econometrics", "Machine Learning for Economic Data", "Computational Macro", "Game Theory"],
+    title: "Tools & Programming",
+    items: ["Advanced Excel", "PowerPoint", "Tableau", "SQL", "Python", "R", "Generative AI"],
   },
   {
     key: "d.",
-    title: "Working Skills",
-    items: ["Client Reporting", "Data Storytelling", "Communication", "Team Leadership", "Initiative", "Markets & Macro Sense"],
+    title: "Research & Communication",
+    items: ["Investor-facing Materials", "Executive Reporting", "Client Reporting", "Stakeholder Coordination", "Data Storytelling", "Requirements Documentation"],
   },
 ];
 
@@ -70,8 +80,8 @@ export const EXPERIENCE = [
     role: "Investment Research Fellow",
     company: "Marquee Equity · New Delhi, IN",
     paragraphs: [
-      "Researched early and growth-stage companies across TMT, consumer goods, education and B2B services, analyzing sector trends, funding momentum and competitive positioning to support fundraising and investor outreach.",
-      "Translated company and sector research into clear narratives that informed mandate selection and deal prioritization across the team pipeline, and supported the preparation of investor-facing materials used in client decisions.",
+      "Researched 8+ early and growth-stage companies across TMT, consumer goods, education and B2B services, analyzing sector trends, funding momentum and competitive positioning to support fundraising and investor outreach.",
+      "Translated company and sector research into clear, investor-facing narratives that informed mandate selection and deal prioritization across the team pipeline.",
     ],
     tags: ["Equity Research", "Valuation", "Sector Analysis", "Investor Decks"],
   },
@@ -81,12 +91,12 @@ export const EXPERIENCE = [
     company: "The Global Tech Experience · Bloomington, IN",
     paragraphs: [
       "Built Tableau and Excel dashboards synthesizing large, multi-source energy and infrastructure datasets into a clear comparative framework, supporting Intel's data-center site-selection decision across five candidate locations.",
-      "Automated data cleaning, reporting and documentation in Python, cutting manual processing time, and packaged campaign data into executive-ready reporting that surfaced three engagement drop-off points and top-performing segments.",
+      "Automated data cleaning, reporting and documentation with Python and generative AI, cutting manual processing time, and packaged campaign data into executive-ready reporting that surfaced three engagement drop-off points and top-performing segments.",
     ],
-    tags: ["Tableau", "Python", "Dashboards", "Intel Project"],
+    tags: ["Tableau", "Python", "GenAI", "Intel Project"],
   },
   {
-    period: "Aug 2023 — Nov 2023",
+    period: "Aug 2023 — Oct 2023",
     role: "Finance & Operations Intern",
     company: "DLF Limited · Gurugram, IN",
     paragraphs: [
@@ -97,11 +107,11 @@ export const EXPERIENCE = [
   },
   {
     period: "Jun 2023 — Jul 2023",
-    role: "Data Analyst Intern",
+    role: "Data Analytics Intern",
     company: "nTalents.ai · Bangalore, IN",
     paragraphs: [
-      "Ran SQL and Python analysis across tens of thousands of records per client and built client-facing dashboards, contributing to roughly 15% higher client satisfaction.",
-      "Performed exploratory analysis on structured and unstructured recruitment datasets, translating patterns into clear visual insights for stakeholders.",
+      "Built client-facing dashboards and ran SQL and Python analysis across tens of thousands of records for 3+ enterprise clients, surfacing process bottlenecks previously tracked manually.",
+      "Packaged findings into stakeholder presentations, contributing to roughly 15% higher client satisfaction.",
     ],
     tags: ["SQL", "Python", "EDA", "Client Dashboards"],
   },
@@ -157,7 +167,7 @@ export const PROJECTS = [
       { label: "Updated", value: "Regularly" },
     ],
     paragraphs: [
-      "Always working on something, mostly fixed-income studies, valuation models, and small market-data tools as I build toward the CFA. Reach out if you'd like to know what's on the desk right now.",
+      "Always working on something, mostly fixed-income studies, valuation models and small market-data tools as I move through the CFA program. Reach out if you'd like to know what's on the desk right now.",
     ],
     tags: ["Fixed Income", "Valuation", "Market Data"],
   },
@@ -173,8 +183,8 @@ export const EDUCATION = [
   {
     tag: "Current",
     place: "Bloomington",
-    region: "Indiana, USA · 2022 — Present",
-    text: "B.S. Economics & Quantitative Methods (STEM), Minor in Psychology, graduating May 2026. Coursework in money & banking, machine learning for economic data, computational macro, game theory and econometrics. Executive Dean's List.",
+    region: "Indiana University · 2022 — 2026",
+    text: "B.S. Economics & Quantitative Methods (STEM), Minor in Psychology, graduating May 2026. Coursework in Money & Banking, Machine Learning for Economic Data, Computational Macro, Game Theory and Econometrics. Executive Dean's List; Finance Chair, Principles of Cybersecurity.",
   },
   {
     tag: "Exchange",
@@ -182,13 +192,19 @@ export const EDUCATION = [
     region: "LSE · Jul — Aug 2024",
     text: "A London School of Economics summer in Intermediate Macroeconomics and Introduction to Econometrics, the quantitative spine of how I read data today.",
   },
+  {
+    tag: "Credential",
+    place: "CFA Program",
+    region: "Level I Candidate · Feb 2026",
+    text: "Building fixed-income and markets fluency through the CFA curriculum, ethics, financial reporting, equity and fixed income, alongside the degree.",
+  },
 ];
 
 export const INTERESTS = [
   { symbol: "↗", title: "Markets & Macro", text: "Daily reading on rates, credit and the macro picture. Staying current isn't optional when the field moves every morning.", note: "Curious by default" },
-  { symbol: "⚽", title: "Football", text: "Watching the game properly, formations, transitions, the why behind the goal. Same pattern-reading I bring to a market." },
+  { symbol: "⚽", title: "Football", text: "Watching the game properly, formations, transitions, the why behind the goal. The same pattern-reading I bring to a market." },
   { symbol: "◷", title: "Philosophy", text: "Long-form arguments and first principles. Pressure-tests how I reason about everything else." },
-  { symbol: "△", title: "Fitness", text: "The discipline ledger. Consistent inputs, compounding outputs, no shortcuts. The cleanest feedback loop I know." },
+  { symbol: "△", title: "Fitness", text: "The discipline ledger. Consistent inputs, compounding outputs, no shortcuts, the cleanest feedback loop I know." },
 ];
 
 export const SECTIONS = [
@@ -201,9 +217,14 @@ export const SECTIONS = [
   { id: "contact", label: "Contact" },
 ];
 
+export const MARQUEE = [
+  "Asset Management", "Credit Research", "Valuation", "Tableau", "Python", "SQL",
+  "Econometrics", "CFA Level I", "Fixed Income", "Investment Research", "Consulting", "Advanced Excel",
+];
+
 export const CHAT_PROMPTS = [
   "What's his valuation experience?",
   "Tell me about the Intel project",
   "Why should I hire him?",
-  "What tools does he use?",
+  "Is he CFA certified?",
 ];
