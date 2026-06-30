@@ -28,7 +28,7 @@ export default function GlobalBackground() {
       <svg
         viewBox="0 0 800 600"
         preserveAspectRatio="xMidYMid slice"
-        className="absolute inset-0 h-full w-full opacity-[0.05]"
+        className="absolute inset-0 h-full w-full opacity-[0.04] sm:opacity-[0.05]"
         fill="none"
         stroke="#e2e8f0"
       >
