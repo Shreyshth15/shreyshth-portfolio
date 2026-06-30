@@ -147,7 +147,6 @@ export default function Contact() {
 
         <footer className="mt-16 flex flex-col items-start justify-between gap-2 border-t border-white/10 pt-8 font-mono text-[11px] uppercase tracking-[0.16em] text-slate-500 sm:flex-row sm:items-center">
           <span>© 2026 {PROFILE.name} · Bloomington, Indiana</span>
-          <span>Portfolio built with Emergent</span>
         </footer>
       </div>
     </section>
