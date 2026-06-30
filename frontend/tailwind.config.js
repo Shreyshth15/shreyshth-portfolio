@@ -8,10 +8,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['Cabinet Grotesk', 'IBM Plex Sans', 'sans-serif'],
-        body: ['IBM Plex Sans', 'sans-serif'],
+        display: ['Fraunces', 'serif'],
+        body: ['Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
-        serif: ['Playfair Display', 'serif'],
+        serif: ['Fraunces', 'serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',

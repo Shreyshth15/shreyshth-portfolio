@@ -22,28 +22,15 @@ export default function About() {
       </div>
 
       <Reveal className="mt-12">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-5">
-          <div className="overflow-hidden rounded-2xl border border-white/10 sm:col-span-3">
-            <img
-              src={PHOTOS.portraitPrimary}
-              alt="Shreyshth Sharma at Indiana University"
-              loading="lazy"
-              className="h-[360px] w-full object-cover object-top transition-transform duration-700 hover:scale-[1.03] md:h-[460px]"
-              data-testid="about-portrait"
-            />
-          </div>
-          <div className="overflow-hidden rounded-2xl border border-white/10 sm:col-span-2">
-            <img
-              src={PHOTOS.portraitSecondary}
-              alt="Shreyshth Sharma, IU College of Arts and Sciences"
-              loading="lazy"
-              className="h-[360px] w-full object-cover object-center transition-transform duration-700 hover:scale-[1.03] md:h-[460px]"
-            />
-          </div>
+        <div className="overflow-hidden rounded-2xl border border-white/10">
+          <img
+            src={PHOTOS.portraitSecondary}
+            alt="Shreyshth Sharma at Indiana University"
+            loading="lazy"
+            className="h-[420px] w-full object-cover object-center transition-transform duration-700 hover:scale-[1.03] md:h-[560px]"
+            data-testid="about-portrait"
+          />
         </div>
-        <p className="mt-6 border-l-2 border-blue-500 pl-5 font-serif text-xl italic text-slate-200 md:text-2xl">
-          "{ABOUT.quote}"
-        </p>
       </Reveal>
 
       <div className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-4">

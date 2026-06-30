@@ -85,14 +85,14 @@ export const EXPERIENCE = [
     tags: ["Equity Research", "Valuation", "Investor Decks"],
   },
   {
-    period: "Jan 2025 — May 2025",
-    role: "Data Analytics Trainee",
-    company: "The Global Tech Experience · Bloomington, IN",
+    period: "Jun 2023 — Jul 2023",
+    role: "Data Analytics Intern",
+    company: "nTalents.ai · Bangalore, IN",
     paragraphs: [
-      "Built Tableau and Excel dashboards from multi-source energy and infrastructure data to support Intel's data-center site selection across five locations.",
-      "Automated cleaning and reporting in Python, cutting manual prep and surfacing three engagement drop-off points in executive-ready reporting.",
+      "Ran SQL and Python analysis across tens of thousands of records for 3+ enterprise clients and built client-facing dashboards.",
+      "Packaged findings into stakeholder presentations, contributing to ~15% higher client satisfaction.",
     ],
-    tags: ["Tableau", "Python", "Intel Project"],
+    tags: ["SQL", "Python", "Dashboards"],
   },
   {
     period: "Aug 2023 — Oct 2023",
@@ -105,14 +105,14 @@ export const EXPERIENCE = [
     tags: ["FP&A", "Excel", "Cost Analysis"],
   },
   {
-    period: "Jun 2023 — Jul 2023",
-    role: "Data Analytics Intern",
-    company: "nTalents.ai · Bangalore, IN",
+    period: "Jan 2025 — May 2025",
+    role: "Data Analytics Trainee",
+    company: "The Global Tech Experience · Bloomington, IN",
     paragraphs: [
-      "Ran SQL and Python analysis across tens of thousands of records for 3+ enterprise clients and built client-facing dashboards.",
-      "Packaged findings into stakeholder presentations, contributing to ~15% higher client satisfaction.",
+      "Built Tableau and Excel dashboards from multi-source energy and infrastructure data to support Intel's data-center site selection across five locations.",
+      "Automated cleaning and reporting in Python, cutting manual prep and surfacing three engagement drop-off points in executive-ready reporting.",
     ],
-    tags: ["SQL", "Python", "Dashboards"],
+    tags: ["Tableau", "Python", "Intel Project"],
   },
 ];
 
@@ -158,20 +158,6 @@ export const PROJECTS = [
     },
     tags: ["Python", "Econometrics", "Sensitivity Analysis", "Policy Modeling"],
   },
-  {
-    index: "03",
-    status: "Ongoing",
-    title: "Market Research & Fixed-Income Studies",
-    meta: [
-      { label: "Status", value: "In progress" },
-      { label: "Focus", value: "Credit & markets" },
-      { label: "Updated", value: "Regularly" },
-    ],
-    paragraphs: [
-      "An ongoing set of valuation models, fixed-income studies and market-research notes built alongside the CFA curriculum. Reach out if you'd like to see what's on the desk right now.",
-    ],
-    tags: ["Fixed Income", "Valuation", "Market Research"],
-  },
 ];
 
 export const EDUCATION = [
@@ -214,7 +200,6 @@ export const SECTIONS = [
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   { id: "education", label: "Education" },
-  { id: "interests", label: "Interests" },
   { id: "contact", label: "Contact" },
 ];
 

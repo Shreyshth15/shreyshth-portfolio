@@ -1,26 +1,6 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, FileText, Linkedin, MessageSquare } from "lucide-react";
 import { PROFILE } from "../../data/portfolio";
-
-const useClock = (timezone) => {
-  const [time, setTime] = useState("");
-  useEffect(() => {
-    const tick = () => {
-      const t = new Date().toLocaleTimeString("en-GB", {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        timeZone: timezone,
-      });
-      setTime(t);
-    };
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, [timezone]);
-  return time;
-};
 
 const Col = ({ heading, children }) => (
   <div>
@@ -30,7 +10,6 @@ const Col = ({ heading, children }) => (
 );
 
 export default function Hero() {
-  const time = useClock(PROFILE.timezone);
   const word = (w) => w.split("");
 
   return (
@@ -44,9 +23,8 @@ export default function Hero() {
 
       {/* top status bar */}
       <div className="relative flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-5 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-400 sm:text-[11px]">
-        <span className="text-slate-300">Portfolio · Finance &amp; Quant · Est. {PROFILE.est}</span>
+        <span className="text-slate-300">Portfolio · Finance &amp; Quant</span>
         <div className="flex items-center gap-4 sm:gap-5">
-          <span data-testid="hero-clock" className="tabular-nums text-slate-300">{time}</span>
           <span>{PROFILE.location}</span>
           <span className="flex items-center gap-2 text-emerald-400">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
@@ -145,7 +123,7 @@ export default function Hero() {
           className="mt-6 flex flex-wrap gap-2"
         >
           {PROFILE.heroTags.map((t) => (
-            <span key={t} className="rounded-full border border-white/12 bg-white/[0.03] px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-slate-300">
+            <span key={t} className="rounded-full border border-white/15 bg-transparent px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-slate-400 transition-colors hover:border-blue-500/60 hover:text-blue-400">
               {t}
             </span>
           ))}

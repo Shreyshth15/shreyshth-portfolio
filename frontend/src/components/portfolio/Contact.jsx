@@ -38,7 +38,10 @@ export default function Contact() {
         body: JSON.stringify(form),
       });
       if (!res.ok) throw new Error("failed");
-      toast.success("Message sent", { description: "Thanks for reaching out, I'll get back to you soon." });
+      const subject = encodeURIComponent(`Portfolio inquiry from ${form.name}`);
+      const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`);
+      toast.success("Opening your email draft", { description: "Saved — finish sending in your mail app." });
+      window.location.href = `mailto:${PROFILE.emailAlt}?subject=${subject}&body=${body}`;
       setForm({ name: "", email: "", message: "" });
     } catch {
       toast.error("Couldn't send", { description: "Please try again or email me directly." });
@@ -51,8 +54,8 @@ export default function Contact() {
     "w-full rounded-xl border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-slate-100 outline-none transition-colors placeholder:text-slate-600 focus:border-blue-500/60";
 
   const contactRows = [
-    { key: "email", label: "Email", value: PROFILE.email, href: `mailto:${PROFILE.email}`, Icon: Mail, copyable: true },
-    { key: "email2", label: "Email", value: PROFILE.emailAlt, href: `mailto:${PROFILE.emailAlt}`, Icon: Mail, copyable: true },
+    { key: "email", label: "Email", value: PROFILE.emailAlt, href: `mailto:${PROFILE.emailAlt}`, Icon: Mail, copyable: true },
+    { key: "email2", label: "University (expiring)", value: PROFILE.email, href: `mailto:${PROFILE.email}`, Icon: Mail, copyable: true },
     { key: "linkedin", label: "LinkedIn", value: PROFILE.linkedinLabel, href: PROFILE.linkedin, Icon: Linkedin, ext: true },
     { key: "phone", label: "Phone", value: PROFILE.phone, href: PROFILE.phoneHref, Icon: Phone, copyable: true },
   ];

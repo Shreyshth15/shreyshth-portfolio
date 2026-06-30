@@ -1,0 +1,62 @@
+{
+  "summary": "Iteration 4 frontend-only verification of Shreyshth Sharma portfolio. All review-request items pass: interactive UBI simulator (slider + readout + recharts chart) works on desktop and mobile (~390px) with no horizontal overflow; contact emails reordered (Shreshth2002@gmail.com primary, shshar@iu.edu 'University (expiring)' second); contact form empty-submit shows error toast and filled submit POSTs to /api/contact (200) and triggers mailto handler; resume PDF reachable at /Shreyshth-Sharma-CV.pdf (HTTP 200 application/pdf); experience chronologically ascending (Marquee Jul 2022 → nTalents Jun 2023 → DLF Aug 2023 → TGTE Jan 2025); only 2 project cards (01 Intel, 02 UBI), project-03 removed; Interests section and nav link removed; footer 'Portfolio built with Emergent' present; About has single portrait (iu-wall.jpg) and static stats 4/8+/5/Global; mobile hamburger -> nav-mobile-menu opens; chat widget opens; page title 'Shreyshth Sharma | Finance & Quant Portfolio'.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Projects > UBI Simulator", "issues": ["Recharts emits initial console warnings: 'The width(-1) and height(-1) of chart should be greater than 0' on first render because ResponsiveContainer measures before layout completes. Non-functional (chart renders correctly after layout). Can be silenced by giving the wrapper a min-height/min-width or rendering the chart only after first layout effect."]}
+    ]
+  },
+  "test_evidence": {
+    "title": "Shreyshth Sharma | Finance & Quant Portfolio",
+    "projects_present": {"01": true, "02": true, "03": false},
+    "ubi_readout_initial_e0_8": "At an elasticity of 0.80, UBI is modeled to reduce labor supply by ~6.4% (range 4.8%-8.0%).",
+    "ubi_readout_e0_0": "At zero elasticity, UBI is modeled to leave labor supply essentially unchanged.",
+    "ubi_readout_e1_3": "At an elasticity of 1.30, UBI is modeled to reduce labor supply by ~10.4% (range 7.8%-13.0%).",
+    "ubi_readout_mobile_e0_5": "At an elasticity of 0.50, UBI is modeled to reduce labor supply by ~4.0% (range 3.0%-5.0%).",
+    "ubi_chart_svg_rendered": true,
+    "contact_link_email_text": "EmailShreshth2002@gmail.com (primary, first row)",
+    "contact_link_email2_text": "University (expiring)shshar@iu.edu (second row)",
+    "copy_buttons_present": {"email": true, "email2": true, "phone": true},
+    "contact_post_status": 200,
+    "contact_post_body": {"ok": true, "id": "uuid"},
+    "empty_submit_toast": "Please fill in every field.",
+    "contact_view_resume_href": "/Shreyshth-Sharma-CV.pdf",
+    "pdf_head_status": 200,
+    "pdf_content_type": "application/pdf",
+    "experience_company_order": ["Marquee", "nTalents", "DLF", "Global Tech"],
+    "interests_section_present": false,
+    "nav_link_interests_present": false,
+    "footer_text_present": true,
+    "about_stats": ["4", "8+", "5", "Global"],
+    "about_portrait_images_count": 1,
+    "about_portrait_loaded": true,
+    "mobile_horizontal_overflow": false,
+    "mobile_scrollW": 390,
+    "mobile_clientW": 390,
+    "mobile_hamburger_opens_menu": true,
+    "chat_widget_opens": true
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Optional polish only: silence the recharts 'width(-1)/height(-1)' initial-render warnings on UbiSimulator by giving the chart wrapper an explicit min-height (e.g., minHeight: 200) on ResponsiveContainer, or by gating the chart behind a useLayoutEffect-measured container width. Functional behavior is unaffected."
+  ],
+  "critical_code_review_comments": [
+    "Contact.jsx: mailto navigation via window.location.href fires after a successful /api/contact POST. In some browsers this also navigates away from the SPA. Consider using a hidden anchor click or window.open('mailto:...') with a small timeout so the toast remains visible and the SPA state is preserved.",
+    "UbiSimulator.jsx: ReferenceDot x is rounded to nearest 0.1 (Math.round(e*10)/10) but central is computed from the un-rounded e — when slider is at 1.35 the dot snaps to 1.4 while the central value reflects 1.35, causing a tiny mismatch between dot position and the line. Either round both or use the raw e for the dot x and let recharts interpolate.",
+    "UbiSimulator.jsx: data array is generated with floating-point steps (x += 0.1). Acceptable but produces values like 0.30000000000000004 before rounding; current rounding handles it, just noting.",
+    "Projects.jsx: UbiSimulator hard-coupled by p.index === '02'. If projects are ever reordered, the simulator would attach to the wrong card. Prefer a flag on the project object (e.g., p.interactive === 'ubi') for resilience.",
+    "Contact.jsx: PROFILE.emailAlt is used both for the visible primary email and the mailto destination on form submit, which is correct, but there is no client-side email validation beyond the HTML type=email — consider a small regex/yup check before POST."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "not tested this iteration (per request)", "frontend": "100% on all review-request items"},
+  "test_credentials": "N/A (no auth)",
+  "seed_data_creation": "One contact row created via /api/contact POST during form test (id 437b23ad-80b5-4d2c-846d-498d3b1a2b2c).",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "All iteration-4 features (UBI interactive sim, contact email reorder, mailto handler, ascending experience, 2-project list, removed Interests, serif fonts, mobile responsiveness, resume PDF) verified working via Playwright on desktop 1920x1080 and mobile 390x844. Only optional cosmetic finding is the recharts initial 'width(-1)' console warning. Previous iteration_1 chat-toggle/Emergent-badge overlap finding is unchanged (still occluded by 'Made with Emergent' badge on desktop bottom-right; programmatic click works via JS .click but Playwright .click() may be intercepted)."
+}

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { SectionShell, Reveal, Tag } from "./shared";
 import { PROJECTS } from "../../data/portfolio";
+import UbiSimulator from "./UbiSimulator";
 
 const Chart = ({ chart }) => (
   <div className="mt-7 rounded-xl border border-white/10 bg-black/30 p-6">
@@ -55,7 +56,7 @@ export default function Projects() {
             >
               <div className="flex items-center justify-between">
                 <span className="font-display text-5xl font-bold text-white/10 transition-colors group-hover:text-blue-500/30">{p.index}</span>
-                <span className="rounded-full border border-white/12 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-emerald-400">{p.status}</span>
+                <span className="rounded-full border border-white/12 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-400">{p.status}</span>
               </div>
               <h3 className="mt-4 font-display text-2xl font-medium text-slate-50 md:text-3xl">{p.title}</h3>
               <div className="mt-5 grid grid-cols-1 gap-3 border-y border-white/10 py-5 sm:grid-cols-3">
@@ -76,6 +77,8 @@ export default function Projects() {
               )}
 
               {p.chart && <Chart chart={p.chart} />}
+
+              {p.index === "02" && <UbiSimulator />}
 
               <div className="mt-6 flex flex-wrap items-center gap-2">
                 <span className="mr-1 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">Tools</span>
