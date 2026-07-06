@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
-// Quiet economics texture: a lower coordinate plane with a supply & demand curve
-// pair crossing center-right, faint grid and a few data points.
-// Monochrome, ~5-6% opacity, 1px strokes, slow one-time draw-in. Fixed behind all content.
+// Premium, quiet quant/economics texture applied site-wide behind all content.
+// Layers: soft gradient glow + masked coordinate dot-grid + faint abstract curves
+// with sparse data points. Monochrome, very low opacity, slow one-time draw-in.
 export default function GlobalBackground() {
   const draw = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -10,76 +10,79 @@ export default function GlobalBackground() {
       pathLength: 1,
       opacity: 1,
       transition: {
-        pathLength: { duration: 2.6, ease: [0.22, 1, 0.36, 1], delay: 0.4 + i * 0.25 },
-        opacity: { duration: 0.6, delay: 0.4 + i * 0.25 },
+        pathLength: { duration: 3, ease: [0.22, 1, 0.36, 1], delay: 0.4 + i * 0.3 },
+        opacity: { duration: 0.8, delay: 0.4 + i * 0.3 },
       },
     }),
   };
 
-  const gridX = [250, 370, 490, 610];
-  const gridY = [200, 280, 360, 440];
-  const dotsBase = [
-    { x: 300, y: 256 },
-    { x: 470, y: 302 },
-    { x: 520, y: 362 },
-  ];
-  const dotsExtra = [
-    { x: 360, y: 372 },
-    { x: 560, y: 250 },
+  const dots = [
+    { x: 300, y: 470 },
+    { x: 620, y: 350 },
+    { x: 900, y: 250 },
+    { x: 1160, y: 300 },
   ];
 
   return (
-    <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 select-none">
+    <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 select-none overflow-hidden">
+      {/* soft layered gradient glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_-8%,rgba(37,99,235,0.12),transparent_46%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_8%_108%,rgba(79,70,229,0.10),transparent_44%)]" />
+
+      {/* coordinate dot-grid, faded toward edges */}
+      <div
+        className="absolute inset-0 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_80%)]"
+        style={{
+          backgroundImage: "radial-gradient(rgba(226,232,240,0.10) 1px, transparent 1px)",
+          backgroundSize: "36px 36px",
+        }}
+      />
+
+      {/* abstract quant curves */}
       <svg
-        viewBox="0 0 800 600"
+        viewBox="0 0 1440 900"
         preserveAspectRatio="xMidYMid slice"
-        className="absolute inset-0 h-full w-full opacity-[0.05] sm:opacity-[0.06]"
+        className="absolute inset-0 h-full w-full opacity-[0.06]"
         fill="none"
         stroke="#e2e8f0"
       >
-        {/* faint grid */}
-        <g strokeWidth="1" opacity="0.35">
-          {gridX.map((x) => (
-            <motion.line key={`v${x}`} x1={x} y1="160" x2={x} y2="470"
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 0.15 }} />
-          ))}
-          {gridY.map((y) => (
-            <motion.line key={`h${y}`} x1="130" y1={y} x2="700" y2={y}
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 0.15 }} />
-          ))}
-        </g>
+        {/* long rising trend curve */}
+        <motion.path
+          d="M -40 640 C 320 560, 560 400, 820 360 S 1240 220, 1500 120"
+          strokeWidth="1.25"
+          variants={draw}
+          initial="hidden"
+          animate="show"
+          custom={0}
+        />
+        {/* gentle bell / distribution curve */}
+        <motion.path
+          d="M 120 700 C 420 700, 500 320, 760 320 S 1100 700, 1400 700"
+          strokeWidth="1.25"
+          variants={draw}
+          initial="hidden"
+          animate="show"
+          custom={1}
+        />
 
-        {/* coordinate axes (lower portion) */}
-        <g strokeWidth="1.25" opacity="0.7">
-          <motion.line x1="130" y1="150" x2="130" y2="470"
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.2 }} />
-          <motion.line x1="130" y1="470" x2="700" y2="470"
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.2 }} />
-        </g>
-
-        {/* demand curve (down) */}
-        <motion.path d="M 150 200 C 300 250, 430 320, 690 440" strokeWidth="1.5"
-          variants={draw} initial="hidden" animate="show" custom={0} />
-        {/* supply curve (up) */}
-        <motion.path d="M 150 450 C 320 400, 470 300, 690 190" strokeWidth="1.5"
-          variants={draw} initial="hidden" animate="show" custom={1} />
-
-        {/* data points */}
+        {/* sparse data points */}
         <g fill="#e2e8f0" stroke="none">
-          {dotsBase.map((d, i) => (
-            <motion.circle key={i} cx={d.x} cy={d.y} r="4"
-              initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 2.6 + i * 0.2, ease: "easeOut" }} />
-          ))}
-        </g>
-        <g fill="#e2e8f0" stroke="none" className="hidden sm:block">
-          {dotsExtra.map((d, i) => (
-            <motion.circle key={i} cx={d.x} cy={d.y} r="4"
-              initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 3.2 + i * 0.2, ease: "easeOut" }} />
+          {dots.map((d, i) => (
+            <motion.circle
+              key={i}
+              cx={d.x}
+              cy={d.y}
+              r="4"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 3 + i * 0.2, ease: "easeOut" }}
+            />
           ))}
         </g>
       </svg>
+
+      {/* readability vignette */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_55%,rgba(3,7,18,0.45))]" />
     </div>
   );
 }
