@@ -45,8 +45,6 @@ export const ABOUT = {
   stats: [
     { value: "4", label: "Internships" },
     { value: "8+", label: "Companies Researched" },
-    { value: "5", label: "Intel Site Models" },
-    { value: "Global", label: "Background" },
   ],
 };
 

@@ -33,7 +33,7 @@ export default function About() {
         </div>
       </Reveal>
 
-      <div className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-4">
+      <div className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
         {ABOUT.stats.map((s) => (
           <div key={s.label} className="bg-[#050b1c] p-6 md:p-8" data-testid={`stat-${s.label}`}>
             <p className="font-display text-3xl font-bold text-slate-50 md:text-5xl">{s.value}</p>
