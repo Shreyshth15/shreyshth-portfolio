@@ -6,9 +6,9 @@ import Portfolio from "@/pages/Portfolio";
 
 function App() {
   useEffect(() => {
-    document.title = "Shreyshth Sharma | Finance & Quant Portfolio";
+    document.title = "Shreyshth Sharma — Finance & Analytics Portfolio";
     const desc =
-      "Portfolio of Shreyshth Sharma, an Economics & Quantitative Methods graduate from Indiana University Bloomington focused on finance, asset management, analytics, investment research and consulting.";
+      "Shreyshth Sharma — Economics & Quantitative Methods graduate focused on credit research, asset management and investment analytics. Finance & data portfolio.";
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement("meta");

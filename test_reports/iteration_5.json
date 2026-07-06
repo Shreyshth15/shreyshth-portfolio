@@ -1,0 +1,58 @@
+{
+  "summary": "Iteration 5 FINAL POLISH pass. All review-request items verified passing on both backend and frontend. Backend: /api/chat/stream STRICT GROUNDING guardrail returns EXACTLY 'Best to email Shreyshth directly.' for off-topic queries (favorite movie, salary) and still answers correctly for on-site questions (Intel project references Tableau/Python/site selection). /api/contact returns 200 with persisted mongo doc. Frontend: SEO head correct after supervisor restart (title 'Shreyshth Sharma — Finance & Analytics Portfolio', meta description mentions credit research/asset management/investment analytics, og:image=/og-image.png, favicon=/favicon-s.png). Global background SVG rendered with 3 equations ('P = Σ CF...', 'σ² = Σ(x−μ)²/n', 'Y = β₀ + β₁X + ε'), 2 curve paths, 4 dots, masked dot-grid div — opacity 0.06 does NOT reduce readability (hero h1 remains rgb(248,250,252) on rgb(3,7,18)). Content: hero badge shows 'Burtonsville, MD · Washington–Baltimore Area', About Based='Burtonsville, MD', about-relocation='Open to relocation: NYC · Chicago', footer '© 2026 Shreyshth Sharma' (no city), no 'Bloomington, IN' in header/badge/about-based/footer. Education 05, Contact 06 (not 07). Education has 'Markets · Self-Study' card with region 'Fixed Income & Credit' (uppercase-rendered) and no 'CFA Program' card / no '2026' inside that card. Skills 'Finance & Markets' contains 'Fixed Income & Credit' and no 'CFA Curriculum'. Contact shows only Gmail (Shreshth2002@gmail.com), LinkedIn, phone — no contact-link-email2, no 'expiring' text. Resume: hero-view-resume and contact-view-resume both href='/Shreyshth-Sharma-CV.pdf' target='_blank' (HTTP 200 application/pdf). Mobile @390px: no horizontal overflow (scrollW=clientW=390), nav-hamburger opens nav-mobile-menu, UBI slider changes readout (0.80→1.05 elasticity), contact form POST returns 200, all hero buttons visible/functional.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {"ui_bugs": [], "integration_issues": [], "design_issues": []},
+  "test_evidence": {
+    "seo": {
+      "title": "Shreyshth Sharma — Finance & Analytics Portfolio",
+      "meta_description_has_credit_research": true,
+      "og_image": "/og-image.png",
+      "favicon": "/favicon-s.png"
+    },
+    "background": {"equations": ["P = Σ CFₜ / (1+r)ᵗ", "σ² = Σ(x−μ)² / n", "Y = β₀ + β₁X + ε"], "curve_paths": 2, "dots": 4, "dot_grid_div": true, "opacity": 0.06},
+    "content": {
+      "hero_badge": "BURTONSVILLE, MD · WASHINGTON–BALTIMORE AREA",
+      "about_based": "Burtonsville, MD",
+      "about_relocation": "OPEN TO RELOCATION: NYC · CHICAGO",
+      "footer": "© 2026 SHREYSHTH SHARMA (no city)",
+      "no_bloomington_in_in_header_badge_or_footer": true,
+      "education_number": "05 / Education",
+      "contact_number": "06 / Contact",
+      "markets_selfstudy_card": true,
+      "cfa_program_card_absent": true,
+      "fixed_income_credit_present": true,
+      "cfa_curriculum_absent_in_skills": true
+    },
+    "contact": {"only_gmail_linkedin_phone": true, "contact_link_email2_absent": true, "expiring_text_absent": true, "gmail_href": "mailto:Shreshth2002@gmail.com"},
+    "resume": {"hero_target_blank": true, "contact_target_blank": true, "pdf_status": 200, "pdf_content_type": "application/pdf"},
+    "chat_guardrail": {
+      "favorite_movie_reply": "Best to email Shreyshth directly. (exact match)",
+      "salary_reply": "Best to email Shreyshth directly. (exact match)",
+      "intel_on_topic_answers_normally": true
+    },
+    "mobile_390": {
+      "no_horizontal_overflow": true,
+      "hamburger_opens_menu": true,
+      "ubi_slider_updates_readout": true,
+      "contact_post_status": 200,
+      "hero_buttons_functional": true
+    }
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_chat_guardrail.py",
+    "/app/backend/tests/test_chat_stream.py",
+    "/app/backend/tests/test_contact.py",
+    "/app/test_reports/pytest/iter5_results.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Frontend dev-server had served a stale index.html before this run (missing new title/og:image/favicon-s). A supervisorctl restart frontend was required to pick up index.html edits. CRA hot-reload does not detect public/index.html changes — main agent should be aware that any future public/index.html edits require a frontend restart to serve, otherwise SEO regressions can go unnoticed."
+  ],
+  "updated_files": ["/app/backend/tests/test_chat_guardrail.py"],
+  "success_rate": {"backend": "100% (8/8 pytest)", "frontend": "100% on all review-request items"},
+  "test_credentials": "N/A (no auth)",
+  "seed_data_creation": "One /api/contact row via mobile form (auto-cleaned via test_contact.py fixture for TEST_ rows; mobile form row remains).",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "All final-polish items verified. Backend chatbot guardrail returns exact 'Best to email Shreyshth directly.' for off-topic; test_chat_guardrail.py can serve as regression. If public/index.html is modified again, restart frontend via supervisor to see changes at the public URL."
+}

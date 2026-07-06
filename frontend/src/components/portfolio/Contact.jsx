@@ -55,7 +55,6 @@ export default function Contact() {
 
   const contactRows = [
     { key: "email", label: "Email", value: PROFILE.emailAlt, href: `mailto:${PROFILE.emailAlt}`, Icon: Mail, copyable: true },
-    { key: "email2", label: "University (expiring)", value: PROFILE.email, href: `mailto:${PROFILE.email}`, Icon: Mail, copyable: true },
     { key: "linkedin", label: "LinkedIn", value: PROFILE.linkedinLabel, href: PROFILE.linkedin, Icon: Linkedin, ext: true },
     { key: "phone", label: "Phone", value: PROFILE.phone, href: PROFILE.phoneHref, Icon: Phone, copyable: true },
   ];
@@ -64,7 +63,7 @@ export default function Contact() {
     <section id="contact" data-testid="contact-section" className="relative border-t border-white/10 px-6 py-24 md:px-12 md:py-32 lg:px-20">
       <div className="mx-auto max-w-[1400px]">
         <Reveal>
-          <span className="font-mono text-xs uppercase tracking-[0.28em] text-blue-400/80">07 / Contact</span>
+          <span className="font-mono text-xs uppercase tracking-[0.28em] text-blue-400/80">06 / Contact</span>
           <h2 className="mt-6 max-w-4xl font-display text-5xl font-bold uppercase leading-[0.95] tracking-tighter text-slate-50 md:text-7xl">
             Let's <span className="font-serif lowercase italic text-blue-400">connect</span>.
           </h2>
@@ -146,7 +145,7 @@ export default function Contact() {
         </div>
 
         <footer className="mt-16 flex flex-col items-start justify-between gap-2 border-t border-white/10 pt-8 font-mono text-[11px] uppercase tracking-[0.16em] text-slate-500 sm:flex-row sm:items-center">
-          <span>© 2026 {PROFILE.name} · Bloomington, Indiana</span>
+          <span>© 2026 {PROFILE.name}</span>
         </footer>
       </div>
     </section>

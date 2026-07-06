@@ -6,7 +6,8 @@ export const PROFILE = {
   tagline: "Finance · Analytics · Investment Research",
   greeting: "Hello, I'm",
   est: "2002",
-  location: "Bloomington, IN",
+  location: "Burtonsville, MD · Washington–Baltimore Area",
+  relocation: "Open to relocation: NYC · Chicago",
   timezone: "America/Indiana/Indianapolis",
   email: "shshar@iu.edu",
   emailAlt: "Shreshth2002@gmail.com",
@@ -32,7 +33,7 @@ export const PHOTOS = {
 export const ABOUT = {
   facts: [
     { label: "Born", value: "New Delhi, IN" },
-    { label: "Based", value: "Bloomington, IN" },
+    { label: "Based", value: "Burtonsville, MD" },
     { label: "Degree", value: "B.S. Econ & Quant (STEM)" },
     { label: "Status", value: "Open to work" },
   ],
@@ -52,7 +53,7 @@ export const SKILLS = [
   {
     key: "a.",
     title: "Finance & Markets",
-    items: ["Financial Analysis", "Valuation", "Credit Research", "Investment Research", "Fixed Income", "CFA Curriculum"],
+    items: ["Financial Analysis", "Valuation", "Credit Research", "Investment Research", "Fixed Income & Credit", "Markets & Macro"],
   },
   {
     key: "b.",
@@ -180,9 +181,9 @@ export const EDUCATION = [
   },
   {
     tag: "Markets",
-    place: "CFA Program",
-    region: "Fixed Income & Markets · 2026",
-    text: "Building my fixed-income and markets foundation through the CFA curriculum, ethics, financial reporting, equity and fixed income, alongside the degree.",
+    place: "Markets · Self-Study",
+    region: "Fixed Income & Credit",
+    text: "Building fixed-income and credit foundations through self-directed study of the CFA curriculum — ethics, financial reporting, equity, and fixed income.",
   },
 ];
 

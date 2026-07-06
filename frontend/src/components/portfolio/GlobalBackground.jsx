@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
-// Premium, quiet quant/economics texture applied site-wide behind all content.
-// Layers: soft gradient glow + masked coordinate dot-grid + faint abstract curves
-// with sparse data points. Monochrome, very low opacity, slow one-time draw-in.
+// Site-wide artistic quant/economics background: faint coordinate dot-grid,
+// a yield curve + normal distribution that draw in once, and a few typeset
+// equations. Monochrome, ~4-6% opacity, readability vignette. Text-safe.
 export default function GlobalBackground() {
   const draw = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -10,35 +10,46 @@ export default function GlobalBackground() {
       pathLength: 1,
       opacity: 1,
       transition: {
-        pathLength: { duration: 3, ease: [0.22, 1, 0.36, 1], delay: 0.4 + i * 0.3 },
-        opacity: { duration: 0.8, delay: 0.4 + i * 0.3 },
+        pathLength: { duration: 3, ease: [0.22, 1, 0.36, 1], delay: 0.4 + i * 0.35 },
+        opacity: { duration: 0.9, delay: 0.4 + i * 0.35 },
       },
     }),
   };
 
+  const fadeIn = (delay) => ({
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    transition: { duration: 1.6, delay },
+  });
+
+  const serif = '"Fraunces", serif';
+
+  const equations = [
+    { x: 90, y: 250, size: 30, t: "P = Σ CF\u209C / (1+r)\u1D57", rot: -3 },
+    { x: 980, y: 470, size: 28, t: "σ² = Σ(x−μ)² / n", rot: 2 },
+    { x: 640, y: 810, size: 26, t: "Y = β\u2080 + β\u2081X + ε", rot: 0 },
+  ];
+
   const dots = [
-    { x: 300, y: 470 },
-    { x: 620, y: 350 },
-    { x: 900, y: 250 },
-    { x: 1160, y: 300 },
+    { x: 340, y: 505 }, { x: 660, y: 470 }, { x: 980, y: 452 }, { x: 1250, y: 446 },
   ];
 
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 select-none overflow-hidden">
-      {/* soft layered gradient glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_-8%,rgba(37,99,235,0.12),transparent_46%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_8%_108%,rgba(79,70,229,0.10),transparent_44%)]" />
+      {/* soft layered gradient glow for depth */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_-8%,rgba(37,99,235,0.10),transparent_46%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_8%_108%,rgba(79,70,229,0.09),transparent_44%)]" />
 
       {/* coordinate dot-grid, faded toward edges */}
       <div
-        className="absolute inset-0 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_80%)]"
+        className="absolute inset-0 opacity-[0.55] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_82%)]"
         style={{
-          backgroundImage: "radial-gradient(rgba(226,232,240,0.10) 1px, transparent 1px)",
-          backgroundSize: "36px 36px",
+          backgroundImage: "radial-gradient(rgba(226,232,240,0.09) 1px, transparent 1px)",
+          backgroundSize: "38px 38px",
         }}
       />
 
-      {/* abstract quant curves */}
+      {/* curves + equations */}
       <svg
         viewBox="0 0 1440 900"
         preserveAspectRatio="xMidYMid slice"
@@ -46,43 +57,39 @@ export default function GlobalBackground() {
         fill="none"
         stroke="#e2e8f0"
       >
-        {/* long rising trend curve */}
-        <motion.path
-          d="M -40 640 C 320 560, 560 400, 820 360 S 1240 220, 1500 120"
-          strokeWidth="1.25"
-          variants={draw}
-          initial="hidden"
-          animate="show"
-          custom={0}
-        />
-        {/* gentle bell / distribution curve */}
-        <motion.path
-          d="M 120 700 C 420 700, 500 320, 760 320 S 1100 700, 1400 700"
-          strokeWidth="1.25"
-          variants={draw}
-          initial="hidden"
-          animate="show"
-          custom={1}
-        />
+        {/* yield curve — rising then flattening */}
+        <motion.path d="M 100 640 C 320 520, 620 470, 1000 452 S 1350 442, 1480 440"
+          strokeWidth="1.5" variants={draw} initial="hidden" animate="show" custom={0} />
+        {/* normal distribution */}
+        <motion.path d="M 120 700 C 430 700, 520 320, 760 320 S 1090 700, 1400 700"
+          strokeWidth="1.5" variants={draw} initial="hidden" animate="show" custom={1} />
 
-        {/* sparse data points */}
+        {equations.map((e, i) => (
+          <motion.text
+            key={i}
+            x={e.x} y={e.y}
+            fontSize={e.size}
+            fontFamily={serif}
+            fill="#e2e8f0"
+            stroke="none"
+            transform={`rotate(${e.rot} ${e.x} ${e.y})`}
+            {...fadeIn(1.2 + i * 0.2)}
+          >
+            {e.t}
+          </motion.text>
+        ))}
+
         <g fill="#e2e8f0" stroke="none">
           {dots.map((d, i) => (
-            <motion.circle
-              key={i}
-              cx={d.x}
-              cy={d.y}
-              r="4"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 3 + i * 0.2, ease: "easeOut" }}
-            />
+            <motion.circle key={i} cx={d.x} cy={d.y} r="5"
+              initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 3 + i * 0.2, ease: "easeOut" }} />
           ))}
         </g>
       </svg>
 
       {/* readability vignette */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_55%,rgba(3,7,18,0.45))]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_52%,rgba(3,7,18,0.5))]" />
     </div>
   );
 }
