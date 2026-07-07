@@ -8,7 +8,7 @@ export const PROFILE = {
   greeting: "Hello, I'm",
   est: "2002",
   location: "Burtonsville, MD · Washington-Baltimore Area",
-  relocation: "Open to relocation nationwide · NYC · Chicago first",
+  relocation: "Open to relocation nationwide · NYC · Chicago · Florida · Texas",
   timezone: "America/Indiana/Indianapolis",
   email: "shshar@iu.edu",
   emailAlt: "Shreshth2002@gmail.com",
