@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { SectionShell, Reveal, Tag } from "./shared";
+import { SectionShell, Reveal, Tag, Emph } from "./shared";
 import { PROJECTS } from "../../data/portfolio";
 import UbiSimulator from "./UbiSimulator";
 
@@ -80,7 +80,7 @@ const Breakdown = ({ breakdown }) => (
     ].map((b) => (
       <div key={b.k} className="bg-[#070d1f] p-5">
         <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-blue-400">{b.k}</p>
-        <p className="mt-2.5 text-sm leading-relaxed text-slate-300">{b.v}</p>
+        <p className="mt-2.5 text-sm leading-relaxed text-slate-300"><Emph>{b.v}</Emph></p>
       </div>
     ))}
   </div>

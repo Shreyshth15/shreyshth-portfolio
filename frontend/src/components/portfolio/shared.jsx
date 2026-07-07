@@ -41,3 +41,52 @@ export const Tag = ({ children }) => (
     {children}
   </span>
 );
+
+const KEY_TERMS = [
+  "Indiana University's Kelley School of Business",
+  "Indiana University Bloomington",
+  "Economics and Quantitative Methods",
+  "Economics & Quantitative Methods",
+  "College of Arts and Sciences",
+  "London School of Economics",
+  "Kelley School of Business",
+  "The Global Tech Experience",
+  "The Recording Academy",
+  "Indiana University",
+  "Executive Dean's List",
+  "Universal Basic Income",
+  "CFA curriculum",
+  "Marquee Equity",
+  "STEM-designated",
+  "Finance Chair",
+  "nTalents.ai",
+  "New Delhi",
+  "12,000 km",
+  "Tableau",
+  "Python",
+  "Kelley",
+  "Intel",
+  "SQL",
+  "DLF",
+];
+
+const TERM_REGEX = new RegExp(
+  `(${KEY_TERMS.map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`,
+  "g"
+);
+
+export const Emph = ({ children }) => (
+  <>
+    {String(children)
+      .split(TERM_REGEX)
+      .map((part, i) =>
+        KEY_TERMS.includes(part) ? (
+          <strong key={i} className="font-semibold text-slate-100">
+            {part}
+          </strong>
+        ) : (
+          part
+        )
+      )}
+  </>
+);

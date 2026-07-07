@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, FileText, Linkedin, MessageSquare } from "lucide-react";
 import { PROFILE } from "../../data/portfolio";
+import { Emph } from "./shared";
 
 const Col = ({ heading, children }) => (
   <div>
@@ -88,7 +89,7 @@ export default function Hero() {
           transition={{ delay: 0.9, duration: 0.7 }}
           className="mt-5 max-w-2xl font-serif text-lg italic leading-relaxed text-slate-300 md:text-xl"
         >
-          {PROFILE.shortBio}
+          <Emph>{PROFILE.shortBio}</Emph>
         </motion.p>
 
         {/* action buttons */}

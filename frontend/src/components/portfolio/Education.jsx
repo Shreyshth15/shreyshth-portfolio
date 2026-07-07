@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { SectionShell, Reveal } from "./shared";
+import { SectionShell, Reveal, Emph } from "./shared";
 import { JOURNEY, JOURNEY_CLOSING, PHOTOS } from "../../data/portfolio";
 
 export default function Education() {
@@ -33,7 +33,7 @@ export default function Education() {
                 <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-blue-400">
                   {[stop.tag, stop.place, stop.period].filter((v, idx, a) => v && a.indexOf(v) === idx).join(" · ")}
                 </p>
-                <p className="mt-4 text-base leading-relaxed text-slate-300 md:text-[17px]">{stop.text}</p>
+                <p className="mt-4 text-base leading-relaxed text-slate-300 md:text-[17px]"><Emph>{stop.text}</Emph></p>
               </div>
             </Reveal>
           ))}

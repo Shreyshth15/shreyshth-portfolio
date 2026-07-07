@@ -1,4 +1,4 @@
-import { SectionShell, Reveal, Tag } from "./shared";
+import { SectionShell, Reveal, Tag, Emph } from "./shared";
 import { EXPERIENCE } from "../../data/portfolio";
 
 export default function Experience() {
@@ -13,7 +13,7 @@ export default function Experience() {
             <p className="mt-1 text-sm text-blue-300/90">{job.company}</p>
             <div className="mt-5 space-y-4">
               {job.paragraphs.map((p, j) => (
-                <p key={j} className="text-base leading-relaxed text-slate-300">{p}</p>
+                <p key={j} className="text-base leading-relaxed text-slate-300"><Emph>{p}</Emph></p>
               ))}
             </div>
             <div className="mt-5 flex flex-wrap gap-2">

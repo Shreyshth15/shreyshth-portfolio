@@ -1,4 +1,4 @@
-import { SectionShell, Reveal } from "./shared";
+import { SectionShell, Reveal, Emph } from "./shared";
 import { ABOUT, PHOTOS, PROFILE } from "../../data/portfolio";
 
 export default function About() {
@@ -22,7 +22,7 @@ export default function About() {
       <div className="mt-10 space-y-6">
         {ABOUT.paragraphs.map((p, i) => (
           <Reveal key={i} delay={i * 0.05}>
-            <p className="text-base leading-relaxed text-slate-300 md:text-[17px]">{p}</p>
+            <p className="text-base leading-relaxed text-slate-300 md:text-[17px]"><Emph>{p}</Emph></p>
           </Reveal>
         ))}
       </div>
