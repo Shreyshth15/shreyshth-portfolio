@@ -8,7 +8,7 @@ export const PROFILE = {
   greeting: "Hello, I'm",
   est: "2002",
   location: "Burtonsville, MD · Washington-Baltimore Area",
-  relocation: "Open to relocation: NYC · Chicago",
+  relocation: "Open to relocation nationwide · NYC · Chicago first",
   timezone: "America/Indiana/Indianapolis",
   email: "shshar@iu.edu",
   emailAlt: "Shreshth2002@gmail.com",
@@ -18,11 +18,11 @@ export const PROFILE = {
   linkedinLabel: "/in/shreyshth-sharma-0170",
   resumeUrl: "/Shreyshth-Sharma-CV.pdf",
   shortBio:
-    "Economics & Quantitative Methods graduate from Indiana University Bloomington, focused on finance, asset management, analytics and investment research. I turn market information, data and business problems into clear, decision-ready analysis.",
-  heroTags: ["Finance", "Analytics", "Asset Management", "Credit Research"],
+    "Economics & Quantitative Methods graduate from Indiana University Bloomington, with a minor in Psychology, focused on finance, asset management, analytics and investment research. I turn market information, data and business problems into clear, decision-ready analysis.",
+  heroTags: ["Finance", "Analytics", "Asset Management", "Credit Research", "Fixed Income", "Behavioral Economics"],
   built: ["Intel Site-Selection Models", "UBI Labor-Supply Simulation", "Investor Research Decks"],
   workedWith: ["Advanced Excel", "Tableau", "Python", "SQL", "R"],
-  openTo: ["Asset Management", "Credit Research", "Consulting"],
+  openTo: ["Asset Management", "Credit Research", "Structured Finance", "Portfolio & Performance Analytics", "Investment Research", "Consulting"],
 };
 
 export const PHOTOS = {
@@ -40,7 +40,7 @@ export const ABOUT = {
   ],
   paragraphs: [
     "I grew up in New Delhi. In 2021, still a teenager, I moved 12,000 km to the United States on my own, a direct admit to Indiana University's Kelley School of Business, set on finance.",
-    "At the end of my sophomore year I made the least obvious call of my degree: I left Kelley for the College of Arts and Sciences to study Economics and Quantitative Methods, a new STEM-designated program. Kelley did not offer an economics major, and I wanted quantitative depth over a familiar label: econometrics, machine learning on economic data, computational macroeconomics. I took the decision to my professors and academic advisors, and my grades in economics made the case for me. It is the best academic decision I have made.",
+    "At the end of my sophomore year I made the least obvious call of my degree: I left Kelley for the College of Arts and Sciences to study Economics and Quantitative Methods, a new STEM-designated program. Kelley did not offer an economics major, and I wanted quantitative depth over a familiar label: econometrics, machine learning on economic data, computational macroeconomics. I took the decision to my professors and academic advisors. It is the best academic decision I have made.",
     "That switch is why my work sits where it does, at the intersection of finance, data, and decision-making. Across Marquee Equity, DLF, nTalents.ai, and The Global Tech Experience, I have done company research, financial analysis, SQL and Python workflows, Tableau dashboards, and client-facing reporting. The thread is simple: take complex information, find the signal, and turn it into something a decision-maker can use.",
     "My psychology minor adds a behavioral lens to markets and business decisions. Models matter, but so do incentives, judgment, and communication.",
   ],
@@ -86,7 +86,7 @@ export const EXPERIENCE = [
   },
   {
     period: "Jun 2023 - Jul 2023",
-    role: "Data Analytics Intern",
+    role: "Data Analyst Intern",
     company: "nTalents.ai · Bangalore, India",
     paragraphs: [
       "Ran SQL and Python analysis across tens of thousands of records for 3+ enterprise clients and built client-facing dashboards.",
@@ -192,7 +192,7 @@ export const JOURNEY = [
     tag: "The Switch",
     place: "Bloomington",
     period: "2021 - 2026",
-    text: "I arrived as a Kelley School of Business direct admit, set on finance. At the end of sophomore year I chose depth over the familiar label and moved to the College of Arts and Sciences for Economics and Quantitative Methods, a new STEM-designated program built on econometrics, machine learning, and computational macro. My professors backed the move, and my grades in economics made it an easy case. Executive Dean's List. Finance Chair, Principles of Cybersecurity. Graduated May 2026.",
+    text: "I arrived as a Kelley School of Business direct admit, set on finance. At the end of sophomore year I chose depth over the familiar label and moved to the College of Arts and Sciences for Economics and Quantitative Methods, a program built on econometrics, machine learning on economic data, and computational macroeconomics. My professors backed the move, my grades in economics settled it, and the Executive Dean's List the following year proved the bet right. By graduation in May 2026 I had also run budgets and events as Finance Chair of Principles of Cybersecurity, managing roughly $2K a semester for workshops with EY, AT&T, and Accenture.",
   },
   {
     num: "3",

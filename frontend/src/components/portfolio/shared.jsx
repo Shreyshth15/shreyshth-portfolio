@@ -58,6 +58,7 @@ const KEY_TERMS = [
   "CFA curriculum",
   "Marquee Equity",
   "STEM-designated",
+  "minor in Psychology",
   "Finance Chair",
   "nTalents.ai",
   "New Delhi",

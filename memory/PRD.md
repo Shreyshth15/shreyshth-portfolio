@@ -44,3 +44,7 @@ Finance recruiters / hiring managers in asset management & credit research evalu
 - Navbar scroll-spy active state; chatbot regrounded (2021 arrival, Kelley academic story, deflects visa/GPA/off-topic with exact refusal line).
 - User follow-up fixes applied: softer background, "Markets · Ongoing" dedupe in stop 4, DLF dates Aug 2023 - Nov 2023 (site + chatbot).
 - Testing: iteration_7.json PASS, backend 19/19, frontend 100%.
+
+## Session Update (Jul 7, 2026): Key-term bolding + CONTENT REVISION v3
+- Emph highlighter bolds ~26 key terms (Indiana University, Kelley, tools, employers, minor in Psychology) across About/Experience/Journey/Projects/hero.
+- v3 edits: new hero paragraph (minor in Psychology bold), 6 hero chips (+Fixed Income, Behavioral Economics), expanded Open To row, relocation "nationwide · NYC · Chicago first", grades sentence removed from About, new verbatim Journey Stop 2 (Dean's List proved bet right, Finance Chair $2K/semester EY/AT&T/Accenture), new Contact intro, nTalents role = Data Analyst Intern. Chatbot grounding synced. Sweeps clean.

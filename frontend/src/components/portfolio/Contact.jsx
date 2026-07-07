@@ -70,7 +70,7 @@ export default function Contact() {
             Let's <span className="font-serif lowercase italic text-blue-400">connect</span>.
           </h2>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-slate-300">
-            Open to finance, asset management, portfolio &amp; performance analytics, credit research and consulting opportunities. Drop a message below or reach me directly.
+            Open to asset management, credit research, structured finance, portfolio and performance analytics, investment research, and consulting roles. Drop a message below or reach me directly.
           </p>
         </Reveal>
 
