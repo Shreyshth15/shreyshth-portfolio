@@ -4,6 +4,8 @@ import os
 import pytest
 import requests
 from pymongo import MongoClient
+from dotenv import load_dotenv
+load_dotenv('/app/backend/.env')
 
 BASE_URL = os.environ.get('REACT_APP_BACKEND_URL', '').rstrip('/')
 if not BASE_URL:

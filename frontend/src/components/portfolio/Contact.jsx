@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { Reveal } from "./shared";
+import SectionMotif from "./SectionMotif";
 import { PROFILE } from "../../data/portfolio";
 import { ArrowUpRight, FileText, Mail, Linkedin, Phone, Send, Loader2, Copy, Check } from "lucide-react";
 
@@ -39,8 +40,8 @@ export default function Contact() {
       });
       if (!res.ok) throw new Error("failed");
       const subject = encodeURIComponent(`Portfolio inquiry from ${form.name}`);
-      const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`);
-      toast.success("Opening your email draft", { description: "Saved — finish sending in your mail app." });
+      const body = encodeURIComponent(`${form.message}\n\n- ${form.name} (${form.email})`);
+      toast.success("Opening your email draft", { description: "Saved. Finish sending in your mail app." });
       window.location.href = `mailto:${PROFILE.emailAlt}?subject=${subject}&body=${body}`;
       setForm({ name: "", email: "", message: "" });
     } catch {
@@ -61,7 +62,8 @@ export default function Contact() {
 
   return (
     <section id="contact" data-testid="contact-section" className="relative border-t border-white/10 px-6 py-24 md:px-12 md:py-32 lg:px-20">
-      <div className="mx-auto max-w-[1400px]">
+      <SectionMotif type="axes" />
+      <div className="relative mx-auto max-w-[1400px]">
         <Reveal>
           <span className="font-mono text-xs uppercase tracking-[0.28em] text-blue-400/80">06 / Contact</span>
           <h2 className="mt-6 max-w-4xl font-display text-5xl font-bold uppercase leading-[0.95] tracking-tighter text-slate-50 md:text-7xl">

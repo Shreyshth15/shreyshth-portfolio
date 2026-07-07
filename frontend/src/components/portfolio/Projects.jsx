@@ -1,7 +1,49 @@
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import { SectionShell, Reveal, Tag } from "./shared";
 import { PROJECTS } from "../../data/portfolio";
 import UbiSimulator from "./UbiSimulator";
+
+const FUNNEL_STAGES = [
+  { label: "Reach", width: 100 },
+  { label: "Engagement", width: 62 },
+  { label: "Retention", width: 34 },
+];
+
+const EngagementFunnel = () => (
+  <div className="mt-7 rounded-xl border border-white/10 bg-black/30 p-6" data-testid="grammys-funnel">
+    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-slate-400">Three-stage engagement funnel · drop-off points</p>
+    <div className="mt-6 space-y-1.5">
+      {FUNNEL_STAGES.map((s, i) => (
+        <div key={s.label}>
+          <motion.div
+            initial={{ width: 0, opacity: 0 }}
+            whileInView={{ width: `${s.width}%`, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, delay: 0.15 + i * 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="flex h-11 items-center justify-between rounded-md bg-blue-500/20 px-4"
+            style={{ borderLeft: "3px solid rgba(59,130,246,0.8)" }}
+          >
+            <span className="font-mono text-[11px] uppercase tracking-wider text-slate-200">{s.label}</span>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -8 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.55 + i * 0.2 }}
+            className="flex items-center gap-2 py-1.5 pl-4"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-rose-400/80" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-rose-300/80">Drop-off {i + 1}</span>
+          </motion.div>
+        </div>
+      ))}
+    </div>
+    <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.15em] text-slate-600">
+      Illustrative funnel · three drop-off points surfaced in the analysis
+    </p>
+  </div>
+);
 
 const Chart = ({ chart }) => (
   <div className="mt-7 rounded-xl border border-white/10 bg-black/30 p-6">
@@ -46,7 +88,7 @@ const Breakdown = ({ breakdown }) => (
 
 export default function Projects() {
   return (
-    <SectionShell id="projects" number="04 / Projects" title={<>Things I've built, broken, and <span className="font-serif italic text-blue-400">kept building</span></>} data-testid="projects-section">
+    <SectionShell id="projects" number="04 / Projects" title={<>Things I've built, broken, and <span className="font-serif italic text-blue-400">kept building</span></>} data-testid="projects-section" motif="normal">
       <div className="space-y-6">
         {PROJECTS.map((p, i) => (
           <Reveal key={p.title} delay={i * 0.05}>
@@ -79,6 +121,20 @@ export default function Projects() {
               {p.chart && <Chart chart={p.chart} />}
 
               {p.interactive === "ubi" && <UbiSimulator />}
+
+              {p.interactive === "funnel" && <EngagementFunnel />}
+
+              {p.github && (
+                <a
+                  href={p.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="ubi-github-link"
+                  className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.14em] text-slate-200 transition-colors duration-200 hover:border-blue-500/60 hover:text-blue-400"
+                >
+                  View code on GitHub <ArrowUpRight className="h-3.5 w-3.5" />
+                </a>
+              )}
 
               <div className="mt-6 flex flex-wrap items-center gap-2">
                 <span className="mr-1 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">Tools</span>

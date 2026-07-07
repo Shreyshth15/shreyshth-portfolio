@@ -6,9 +6,9 @@ import Portfolio from "@/pages/Portfolio";
 
 function App() {
   useEffect(() => {
-    document.title = "Shreyshth Sharma — Finance & Analytics Portfolio";
+    document.title = "Shreyshth Sharma · Finance & Analytics Portfolio";
     const desc =
-      "Shreyshth Sharma — Economics & Quantitative Methods graduate focused on credit research, asset management and investment analytics. Finance & data portfolio.";
+      "Shreyshth Sharma: Economics & Quantitative Methods graduate focused on credit research, asset management and investment analytics. Finance & data portfolio.";
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement("meta");

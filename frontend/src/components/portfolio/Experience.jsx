@@ -3,7 +3,7 @@ import { EXPERIENCE } from "../../data/portfolio";
 
 export default function Experience() {
   return (
-    <SectionShell id="experience" number="03 / Experience" title={<>Where I've <span className="font-serif italic text-blue-400">shown up</span></>} data-testid="experience-section">
+    <SectionShell id="experience" number="03 / Experience" title={<>Where I've <span className="font-serif italic text-blue-400">shown up</span></>} data-testid="experience-section" motif="yield">
       <div className="relative border-l border-white/12 pl-8 md:pl-10">
         {EXPERIENCE.map((job, i) => (
           <Reveal key={job.role} delay={i * 0.05} className="relative pb-14 last:pb-0">

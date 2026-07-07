@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { PROFILE, SECTIONS } from "../../data/portfolio";
@@ -6,11 +6,28 @@ import { PROFILE, SECTIONS } from "../../data/portfolio";
 export default function Navbar() {
   const [visible, setVisible] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
   const { scrollYProgress, scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (y) => {
     setVisible(y > window.innerHeight * 0.7);
   });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: "-35% 0px -55% 0px" }
+    );
+    SECTIONS.forEach((s) => {
+      const el = document.getElementById(s.id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
 
   const close = () => setOpen(false);
 
@@ -46,9 +63,14 @@ export default function Navbar() {
                     key={s.id}
                     href={`#${s.id}`}
                     data-testid={`nav-link-${s.id}`}
-                    className="font-mono text-[11px] uppercase tracking-[0.16em] text-slate-400 transition-colors hover:text-white"
+                    className={`relative font-mono text-[11px] uppercase tracking-[0.16em] transition-colors ${
+                      active === s.id ? "text-white" : "text-slate-400 hover:text-white"
+                    }`}
                   >
                     {s.label}
+                    {active === s.id && (
+                      <span className="absolute -bottom-1.5 left-0 h-px w-full bg-blue-500" />
+                    )}
                   </a>
                 ))}
                 <a

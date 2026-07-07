@@ -19,7 +19,7 @@ export default function UbiSimulator() {
   const readout =
     e < 0.05
       ? "At zero elasticity, UBI is modeled to leave labor supply essentially unchanged."
-      : `At an elasticity of ${e.toFixed(2)}, UBI is modeled to reduce labor supply by ~${central.toFixed(1)}% (range ${low.toFixed(1)}%–${high.toFixed(1)}%).`;
+      : `At an elasticity of ${e.toFixed(2)}, UBI is modeled to reduce labor supply by ~${central.toFixed(1)}% (range ${low.toFixed(1)}% to ${high.toFixed(1)}%).`;
 
   return (
     <div className="mt-7 rounded-xl border border-white/10 bg-black/30 p-6" data-testid="ubi-simulator">

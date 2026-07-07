@@ -66,10 +66,20 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.85, duration: 0.6 }}
-          className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-slate-400"
+          transition={{ delay: 0.8, duration: 0.6 }}
+          data-testid="hero-pronunciation"
+          className="mt-4 font-mono text-[11px] tracking-[0.14em] text-slate-500"
         >
-          Shreyshth Sharma · <span className="text-slate-300">{PROFILE.tagline}</span>
+          {PROFILE.pronunciation}
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.85, duration: 0.6 }}
+          className="mt-5 font-mono text-[11px] uppercase tracking-[0.2em] text-slate-300"
+        >
+          {PROFILE.tagline}
         </motion.p>
 
         <motion.p

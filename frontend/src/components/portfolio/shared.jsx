@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SectionMotif from "./SectionMotif";
 
 export const Reveal = ({ children, delay = 0, y = 28, className = "" }) => (
   <motion.div
@@ -12,13 +13,14 @@ export const Reveal = ({ children, delay = 0, y = 28, className = "" }) => (
   </motion.div>
 );
 
-export const SectionShell = ({ id, number, title, children, "data-testid": testId }) => (
+export const SectionShell = ({ id, number, title, children, motif, "data-testid": testId }) => (
   <section
     id={id}
     data-testid={testId}
     className="relative border-t border-white/10 px-6 py-32 md:px-12 md:py-48 lg:px-20"
   >
-    <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-y-10 lg:grid-cols-12 lg:gap-x-12">
+    {motif && <SectionMotif type={motif} />}
+    <div className="relative mx-auto grid max-w-[1400px] grid-cols-1 gap-y-10 lg:grid-cols-12 lg:gap-x-12">
       <div className="lg:col-span-4">
         <div className="lg:sticky lg:top-24">
           <span className="font-mono text-xs uppercase tracking-[0.28em] text-blue-400/80">
