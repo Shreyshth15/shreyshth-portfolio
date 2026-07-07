@@ -6,9 +6,9 @@ import Portfolio from "@/pages/Portfolio";
 
 function App() {
   useEffect(() => {
-    document.title = "Shreyshth Sharma · Finance & Analytics Portfolio";
+    document.title = "Shreyshth Sharma | Finance & Analytics Portfolio";
     const desc =
-      "Shreyshth Sharma: Economics & Quantitative Methods graduate focused on credit research, asset management and investment analytics. Finance & data portfolio.";
+      "Portfolio of Shreyshth Sharma, an Economics & Quantitative Methods graduate from Indiana University Bloomington focused on finance, investment research, credit, analytics, and decision-ready business analysis.";
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement("meta");
@@ -16,6 +16,12 @@ function App() {
       document.head.appendChild(meta);
     }
     meta.setAttribute("content", desc);
+
+    const removeBadge = () => document.getElementById("emergent-badge")?.remove();
+    removeBadge();
+    const observer = new MutationObserver(removeBadge);
+    observer.observe(document.body, { childList: true });
+    return () => observer.disconnect();
   }, []);
 
   return (

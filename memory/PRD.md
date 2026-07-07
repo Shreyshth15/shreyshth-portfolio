@@ -48,3 +48,11 @@ Finance recruiters / hiring managers in asset management & credit research evalu
 ## Session Update (Jul 7, 2026): Key-term bolding + CONTENT REVISION v3
 - Emph highlighter bolds ~26 key terms (Indiana University, Kelley, tools, employers, minor in Psychology) across About/Experience/Journey/Projects/hero.
 - v3 edits: new hero paragraph (minor in Psychology bold), 6 hero chips (+Fixed Income, Behavioral Economics), expanded Open To row, relocation "nationwide · NYC · Chicago first", grades sentence removed from About, new verbatim Journey Stop 2 (Dean's List proved bet right, Finance Chair $2K/semester EY/AT&T/Accenture), new Contact intro, nTalents role = Data Analyst Intern. Chatbot grounding synced. Sweeps clean.
+
+## Session Update (Jul 7, 2026): Recruiter polish
+- Contact form converted to pure mailto (Shreshth2002@gmail.com), backend /api/contact no longer called by UI (endpoint left in place, harmless).
+- "Made with Emergent" badge removed: static HTML + emergent-main.js script deleted from index.html, MutationObserver in App.js removes any re-injected badge.
+- About replaced with concise 3-paragraph professional copy (user-provided verbatim).
+- Metadata: title "Shreyshth Sharma | Finance & Analytics Portfolio" + new description across title/meta/OG/Twitter.
+- Relocation line updated earlier to "nationwide · NYC · Chicago · Florida · Texas" (site + chatbot).
+- All external links verified (resume 200, LinkedIn/GitHub _blank, contact anchor).

@@ -39,10 +39,9 @@ export const ABOUT = {
     { label: "Status", value: "Open to work" },
   ],
   paragraphs: [
-    "I grew up in New Delhi. In 2021, still a teenager, I moved 12,000 km to the United States on my own, a direct admit to Indiana University's Kelley School of Business, set on finance.",
-    "At the end of my sophomore year I made the least obvious call of my degree: I left Kelley for the College of Arts and Sciences to study Economics and Quantitative Methods, a new STEM-designated program. Kelley did not offer an economics major, and I wanted quantitative depth over a familiar label: econometrics, machine learning on economic data, computational macroeconomics. I took the decision to my professors and academic advisors. It is the best academic decision I have made.",
-    "That switch is why my work sits where it does, at the intersection of finance, data, and decision-making. Across Marquee Equity, DLF, nTalents.ai, and The Global Tech Experience, I have done company research, financial analysis, SQL and Python workflows, Tableau dashboards, and client-facing reporting. The thread is simple: take complex information, find the signal, and turn it into something a decision-maker can use.",
-    "My psychology minor adds a behavioral lens to markets and business decisions. Models matter, but so do incentives, judgment, and communication.",
+    "I grew up in New Delhi and moved to the United States in 2021 to study at Indiana University Bloomington. I began as a direct admit to the Kelley School of Business, but later chose to pursue Economics and Quantitative Methods in the College of Arts and Sciences because I wanted deeper training in econometrics, data analysis, and economic modeling.",
+    "That decision shaped the way I work: I combine finance, data, and decision-making. Across Marquee Equity, DLF, nTalents.ai, and The Global Tech Experience, I have worked on company research, financial analysis, SQL and Python workflows, Tableau dashboards, and client-facing reporting.",
+    "My psychology minor adds a behavioral lens to how I think about markets, incentives, and communication. Models matter, but so do judgment, incentives, and how decisions are actually made.",
   ],
   stats: [
     { value: "4", label: "Internships" },

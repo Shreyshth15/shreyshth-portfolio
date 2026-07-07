@@ -3,13 +3,10 @@ import { toast } from "sonner";
 import { Reveal } from "./shared";
 import SectionMotif from "./SectionMotif";
 import { PROFILE } from "../../data/portfolio";
-import { ArrowUpRight, FileText, Mail, Linkedin, Phone, Send, Loader2, Copy, Check } from "lucide-react";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+import { ArrowUpRight, FileText, Mail, Linkedin, Phone, Send, Copy, Check } from "lucide-react";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sending, setSending] = useState(false);
   const [copied, setCopied] = useState("");
 
   const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -25,30 +22,17 @@ export default function Contact() {
     }
   };
 
-  const submit = async (e) => {
+  const submit = (e) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       toast.error("Please fill in every field.");
       return;
     }
-    setSending(true);
-    try {
-      const res = await fetch(`${API}/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error("failed");
-      const subject = encodeURIComponent(`Portfolio inquiry from ${form.name}`);
-      const body = encodeURIComponent(`${form.message}\n\n- ${form.name} (${form.email})`);
-      toast.success("Opening your email draft", { description: "Saved. Finish sending in your mail app." });
-      window.location.href = `mailto:${PROFILE.emailAlt}?subject=${subject}&body=${body}`;
-      setForm({ name: "", email: "", message: "" });
-    } catch {
-      toast.error("Couldn't send", { description: "Please try again or email me directly." });
-    } finally {
-      setSending(false);
-    }
+    const subject = encodeURIComponent(`Portfolio inquiry from ${form.name}`);
+    const body = encodeURIComponent(`${form.message}\n\n- ${form.name} (${form.email})`);
+    toast.success("Opening your email draft", { description: "Finish sending in your mail app." });
+    window.location.href = `mailto:${PROFILE.emailAlt}?subject=${subject}&body=${body}`;
+    setForm({ name: "", email: "", message: "" });
   };
 
   const inputClass =
@@ -85,12 +69,11 @@ export default function Contact() {
               <textarea data-testid="contact-message" rows={5} className={inputClass + " resize-none"} placeholder="What's on your mind?" value={form.message} onChange={update("message")} />
               <button
                 type="submit"
-                disabled={sending}
                 data-testid="contact-submit"
-                className="inline-flex items-center gap-2 rounded-full bg-blue-500 px-6 py-3 font-mono text-xs uppercase tracking-[0.14em] text-white transition-colors hover:bg-blue-400 disabled:opacity-50"
+                className="inline-flex items-center gap-2 rounded-full bg-blue-500 px-6 py-3 font-mono text-xs uppercase tracking-[0.14em] text-white transition-colors hover:bg-blue-400"
               >
-                {sending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
-                {sending ? "Sending" : "Send message"}
+                <Send className="h-4 w-4" />
+                Send message
               </button>
             </form>
           </Reveal>
