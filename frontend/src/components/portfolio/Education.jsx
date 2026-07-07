@@ -31,7 +31,7 @@ export default function Education() {
                 data-testid={`journey-stop-${stop.num}`}
               >
                 <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-blue-400">
-                  {stop.tag} · {stop.place} · {stop.period}
+                  {[stop.tag, stop.place, stop.period].filter((v, idx, a) => v && a.indexOf(v) === idx).join(" · ")}
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-slate-300 md:text-[17px]">{stop.text}</p>
               </div>

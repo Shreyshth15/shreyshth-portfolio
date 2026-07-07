@@ -95,7 +95,7 @@ export const EXPERIENCE = [
     tags: ["SQL", "Python", "Dashboards"],
   },
   {
-    period: "Aug 2023 - Oct 2023",
+    period: "Aug 2023 - Nov 2023",
     role: "Finance & Operations Intern",
     company: "DLF Limited · Gurugram, India",
     paragraphs: [

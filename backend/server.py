@@ -51,7 +51,7 @@ CORE SKILLS
 EXPERIENCE
 1. Marquee Equity, Investment Research Fellow (New Delhi, Jul 2022 - Jun 2023): researched 8+ early and growth-stage companies across TMT, consumer goods, education, B2B services; built sector and company research that informed mandate selection and deal prioritization; prepared investor-facing materials.
 2. The Global Tech Experience, Data Analytics Trainee (Bloomington, IN, Jan 2025 - May 2025): built Tableau and Excel dashboards synthesizing large multi-source energy and infrastructure datasets to support Intel's data-center site selection across five candidate locations; automated cleaning and reporting with Python. Also completed a GRAMMYs audience analytics project for The Recording Academy: cleaned and structured audience data, built Tableau dashboards tracking engagement KPIs across content segments, and surfaced three drop-off points plus the highest-performing content segments, packaged into executive-ready recommendations.
-3. DLF Limited, Finance & Operations Intern (Gurugram, Aug 2023 - Oct 2023): built Excel reporting templates that shortened the monthly close; analyzed vendor and departmental spend, feeding a cost review credited with ~10% lower monthly operating costs.
+3. DLF Limited, Finance & Operations Intern (Gurugram, Aug 2023 - Nov 2023): built Excel reporting templates that shortened the monthly close; analyzed vendor and departmental spend, feeding a cost review credited with ~10% lower monthly operating costs.
 4. nTalents.ai, Data Analytics Intern (Bangalore, Jun 2023 - Jul 2023): ran SQL and Python analysis across tens of thousands of records; built client dashboards contributing to ~15% higher client satisfaction.
 
 EDUCATION & HONORS

@@ -44,7 +44,7 @@ export default function GlobalBackground() {
 
       <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 h-full w-full" fill="none">
         {/* ==== Supply & Demand equilibrium centerpiece, curves at ~14% ==== */}
-        <g opacity="0.17" stroke={slate} strokeWidth="2">
+        <g opacity="0.13" stroke={slate} strokeWidth="1.6">
           {/* axes */}
           <motion.path d="M 260 150 L 260 780 L 1300 780" strokeWidth="1.3" {...draw(0)} />
           {/* Supply curve S */}
@@ -66,13 +66,13 @@ export default function GlobalBackground() {
         </g>
 
         {/* equilibrium markers */}
-        <g opacity="0.19">
+        <g opacity="0.15">
           <motion.circle cx="720" cy="500" r="5" fill={slate} {...fadeIn(2.4)} />
           <motion.circle cx="795" cy="428" r="4.5" fill={indigo} {...fadeIn(2.8)} />
         </g>
 
         {/* curve labels */}
-        <g opacity="0.18" fill={slate} fontFamily={serif} fontSize="30" fontStyle="italic">
+        <g opacity="0.14" fill={slate} fontFamily={serif} fontSize="30" fontStyle="italic">
           <motion.text x="1116" y="242" {...fadeIn(2.2)}>S</motion.text>
           <motion.text x="1116" y="772" {...fadeIn(2.2)}>D</motion.text>
           <motion.text x="1252" y="772" fill={indigo} {...fadeIn(2.8)}>D&#8242;</motion.text>
@@ -81,7 +81,7 @@ export default function GlobalBackground() {
         </g>
 
         {/* typeset equations at ~9% (max two here, section motifs add at most one more) */}
-        <g opacity="0.12" fill={slate} fontFamily={serif}>
+        <g opacity="0.09" fill={slate} fontFamily={serif}>
           <motion.text x="90" y="220" fontSize="30" transform="rotate(-3 90 220)" {...fadeIn(1.6)}>
             P = &#931; CF&#8340; / (1+r)&#7511;
           </motion.text>

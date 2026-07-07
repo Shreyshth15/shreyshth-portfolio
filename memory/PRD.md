@@ -32,3 +32,15 @@ Finance recruiters / hiring managers in asset management & credit research evalu
 
 ## Next Tasks
 - Replace placeholder portrait + CV when user provides files.
+
+## Session Update (Jul 7, 2026): FINAL MASTER REVISION v2
+- Restored /app/backend (lost in fork) from git; recreated backend/.env (MONGO_URL, DB_NAME=portfolio_db, EMERGENT_LLM_KEY).
+- Global sweeps: zero em dashes, zero banned words (visa/OPT/immigration/sponsorship/work authorization/stay-back); dates corrected sitewide (New Delhi 2002 - 2021, IU 2021 - 2026).
+- Hero: pronunciation line + new tagline "Shrey Sharma · Finance · Analytics · Investment Research".
+- About: 4 new verbatim biography paragraphs (Kelley switch story, 2021 arrival). Born = "New Delhi, India".
+- Projects: UBI "View code on GitHub" button (github.com/Shreyshth15/UBI-Labor-Supply-Simulation); new 03 GRAMMYs Audience Analytics card with three-stage funnel + 3 drop-off markers.
+- Journey (05): premium numbered vertical timeline, draw-on-scroll line, 4 verbatim stops, closing "The distance was the easy part."
+- Background: new supply/demand equilibrium centerpiece (S, D, dashed D' shift with arrow, P*/Q* guides) + per-section motifs (Experience=yield curve, Projects=normal dist, Journey=growth curve, Contact=axes + Qd=Qs). ROOT-CAUSE FIX: removed bg color from Portfolio wrapper (positioned ancestor bg painted over fixed -z-10 layer). Final opacities: curves 0.13, labels 0.14, equations 0.09 (user asked "less bold" after acceptance pass).
+- Navbar scroll-spy active state; chatbot regrounded (2021 arrival, Kelley academic story, deflects visa/GPA/off-topic with exact refusal line).
+- User follow-up fixes applied: softer background, "Markets · Ongoing" dedupe in stop 4, DLF dates Aug 2023 - Nov 2023 (site + chatbot).
+- Testing: iteration_7.json PASS, backend 19/19, frontend 100%.
