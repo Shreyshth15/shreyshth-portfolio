@@ -19,7 +19,7 @@ export const PROFILE = {
   heroTags: ["Finance", "Analytics", "Investment Research", "Credit Research", "Fixed Income Research", "Macro & Rates Analysis", "Behavioral Economics"],
   built: ["Intel Site-Selection Models", "UBI Labor-Supply Simulation", "Investor Research Decks"],
   workedWith: ["Advanced Excel", "PowerPoint", "Tableau", "SQL", "Python", "R"],
-  openTo: ["Asset Management", "Credit Research", "Structured Finance", "Portfolio & Performance Analytics", "Investment Research", "Consulting"],
+  openTo: ["Credit Research", "Structured Finance", "Asset Management", "Investment Analytics"],
 };
 
 export const PHOTOS = {
@@ -36,7 +36,7 @@ export const ABOUT = {
     { label: "Relocation", value: "Open to relocation nationwide" },
   ],
   paragraphs: [
-    "I'm an Economics & Quantitative Methods graduate from Indiana University Bloomington with a minor in Psychology, focused on finance, investment research, credit, and analytics.",
+    "I'm an Economics & Quantitative Methods graduate from Indiana University Bloomington with a minor in Psychology, focused on credit, investment research, and analytics.",
     "Across investment research, finance operations, and data analytics roles, I have worked on company research, valuation materials, expense analysis, SQL and Python workflows, Tableau dashboards, and client-facing reporting.",
     "My work sits at the intersection of finance, data, and communication: turning market information, company data, and business problems into decision-ready analysis.",
   ],
@@ -207,7 +207,6 @@ export const SECTIONS = [
   { id: "education", label: "Education" },
   { id: "contact", label: "Contact" },
 ];
-
 
 export const CHAT_PROMPTS = [
   "Why should I hire him?",

@@ -23,15 +23,12 @@ export default function Hero() {
       <div className="pointer-events-none absolute -left-32 bottom-20 h-[380px] w-[380px] rounded-full bg-indigo-700/10 blur-[120px]" />
 
       {/* top status bar */}
-      <div className="relative flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-5 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-400 sm:text-[11px]">
-        <span className="text-slate-300">Portfolio · Finance &amp; Quant</span>
-        <div className="flex items-center gap-4 sm:gap-5">
-          <span>{PROFILE.location}</span>
-          <span className="flex items-center gap-2 text-emerald-400">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-            Available
-          </span>
-        </div>
+      <div className="relative flex flex-wrap items-center justify-end gap-4 border-b border-white/10 pb-5 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-400 sm:gap-5 sm:text-[11px]">
+        <span>{PROFILE.location}</span>
+        <span className="flex items-center gap-2 text-emerald-400">
+          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+          Available
+        </span>
       </div>
 
       {/* name */}
@@ -124,23 +121,9 @@ export default function Hero() {
             <Linkedin className="h-4 w-4" /> LinkedIn
           </a>
         </motion.div>
-
-        {/* focus tags */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.15, duration: 0.6 }}
-          className="mt-6 flex flex-wrap gap-2"
-        >
-          {PROFILE.heroTags.map((t) => (
-            <span key={t} className="rounded-full border border-white/15 bg-transparent px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-slate-400 transition-colors hover:border-blue-500/60 hover:text-blue-400">
-              {t}
-            </span>
-          ))}
-        </motion.div>
       </div>
 
-      {/* bottom grid */}
+        {/* bottom grid */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
