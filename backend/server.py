@@ -60,9 +60,9 @@ EDUCATION & HONORS
 - Executive Dean's List (College of Arts and Sciences). Finance Chair, Principles of Cybersecurity (managed ~$2K/semester budget, coordinated events of 60+ attendees with EY, AT&T, Accenture).
 
 PROJECTS
-- Intel Data-Center Site Selection (TGTE): Tableau dashboards scoring five candidate sites on a single comparable scale, prep pipeline automated in Python.
+- Intel Data-Center Site Selection (The Global Tech Experience): Tableau dashboards scoring five candidate sites on a single comparable scale, prep pipeline automated in Python.
 - UBI Labor-Supply Simulation (independent, IU): Python simulation running the policy across a range of labor-supply elasticities with full sensitivity analysis. Code is on GitHub: github.com/Shreyshth15/UBI-Labor-Supply-Simulation.
-- GRAMMYs Audience Analytics (The Recording Academy, via TGTE): Tableau KPI dashboards on audience engagement across content segments.
+- GRAMMYs Audience Analytics (The Recording Academy, via The Global Tech Experience): Tableau KPI dashboards on audience engagement across content segments.
 
 INTERESTS: markets and macro, football, philosophy, fitness.
 

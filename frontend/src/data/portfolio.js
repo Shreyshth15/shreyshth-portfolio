@@ -119,7 +119,7 @@ export const PROJECTS = [
     title: "Intel Data-Center Site Selection",
     meta: [
       { label: "Role", value: "Data Analytics Trainee" },
-      { label: "Type", value: "Industry Project · TGTE" },
+      { label: "Type", value: "Industry Project · The Global Tech Experience" },
       { label: "Stack", value: "Tableau, Excel, Python" },
     ],
     breakdown: {
@@ -162,7 +162,7 @@ export const PROJECTS = [
     title: "GRAMMYs Audience Analytics · The Recording Academy",
     meta: [
       { label: "Role", value: "Data Analytics Trainee" },
-      { label: "Type", value: "Industry Project · TGTE" },
+      { label: "Type", value: "Industry Project · The Global Tech Experience" },
       { label: "Stack", value: "Tableau, Excel, Python" },
     ],
     breakdown: {
