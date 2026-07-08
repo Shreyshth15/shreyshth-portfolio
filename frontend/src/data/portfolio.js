@@ -181,7 +181,7 @@ export const JOURNEY = [
     tag: "",
     place: "Indiana University Bloomington",
     period: "2026",
-    text: "B.S. in Economics & Quantitative Methods with a minor in Psychology. Coursework and projects focused on econometrics, data analysis, economic modeling, finance, and decision-making.",
+    text: "B.S. in Economics & Quantitative Methods with a minor in Psychology. Coursework and projects across econometrics, machine learning on economic data, computational macroeconomics, game theory, and statistical analysis. Executive Dean's List. Finance Chair, Principles of Cybersecurity.",
   },
   {
     num: "2",
