@@ -56,3 +56,10 @@ Finance recruiters / hiring managers in asset management & credit research evalu
 - Metadata: title "Shreyshth Sharma | Finance & Analytics Portfolio" + new description across title/meta/OG/Twitter.
 - Relocation line updated earlier to "nationwide · NYC · Chicago · Florida · Texas" (site + chatbot).
 - All external links verified (resume 200, LinkedIn/GitHub _blank, contact anchor).
+
+## Session Update (Jul 8, 2026): Resume swap + location/copy/mobile fixes
+- Resume replaced with user-uploaded Resume_fitch.pdf (same path /Shreyshth-Sharma-CV.pdf).
+- Location unified to "Washington-Baltimore Area" (hero, About Based card, chatbot). No Burtonsville anywhere.
+- Origin journey card rewritten (professional tone, verbatim user copy); closing line now "The move shaped how I think about risk, independence, and long-term decision-making."
+- Mobile: hero name single-line (13vw + nowrap), journey cards 15px/1.75 leading, smaller nodes/padding, scroll-margin-top 6.5rem.
+- User instructed to push via Save to GitHub -> Shreyshth15/shreyshth-portfolio main -> Vercel auto-redeploy.

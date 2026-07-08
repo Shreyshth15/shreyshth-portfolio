@@ -7,7 +7,7 @@ export const PROFILE = {
   tagline: "Shrey Sharma · Finance · Analytics · Investment Research",
   greeting: "Hello, I'm",
   est: "2002",
-  location: "Burtonsville, MD · Washington-Baltimore Area",
+  location: "Washington-Baltimore Area",
   relocation: "Open to relocation nationwide · NYC · Chicago · Florida · Texas",
   timezone: "America/Indiana/Indianapolis",
   email: "shshar@iu.edu",
@@ -34,7 +34,7 @@ export const PHOTOS = {
 export const ABOUT = {
   facts: [
     { label: "Born", value: "New Delhi, India" },
-    { label: "Based", value: "Burtonsville, MD" },
+    { label: "Based", value: "Washington-Baltimore Area" },
     { label: "Degree", value: "B.S. Econ & Quant (STEM)" },
     { label: "Status", value: "Open to work" },
   ],
@@ -184,7 +184,7 @@ export const JOURNEY = [
     tag: "Origin",
     place: "New Delhi",
     period: "2002 - 2021",
-    text: "Born and raised. Markets, incentives, and systems pulled at me long before economics was a degree on paper. In 2021 I left home as a teenager for a country I had never lived in, 12,000 km away, to find out what I could build on my own.",
+    text: "Born and raised in New Delhi, I became interested in markets, incentives, and systems before studying economics formally. In 2021, I moved to the United States to study at Indiana University Bloomington and build a career at the intersection of finance, data, and decision-making.",
   },
   {
     num: "2",
@@ -209,7 +209,7 @@ export const JOURNEY = [
   },
 ];
 
-export const JOURNEY_CLOSING = "The distance was the easy part.";
+export const JOURNEY_CLOSING = "The move shaped how I think about risk, independence, and long-term decision-making.";
 
 export const INTERESTS = [
   { symbol: "↗", title: "Markets & Macro", text: "Daily reading on rates, credit and the macro picture. Staying current isn't optional when the field moves every morning.", note: "Curious by default" },

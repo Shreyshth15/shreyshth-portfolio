@@ -29,7 +29,7 @@ html {
 }
 
 section[id], header[id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 6.5rem;
 }
 
 @keyframes marquee {

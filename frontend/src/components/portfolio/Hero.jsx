@@ -46,15 +46,15 @@ export default function Hero() {
           {PROFILE.greeting}
         </motion.div>
         <div className="overflow-hidden">
-          <h1 className="font-display text-[17vw] font-extrabold uppercase leading-[0.82] tracking-tighter text-slate-50 sm:text-[15vw] md:text-[12vw] lg:text-[10.5vw]">
-            <span className="block">
+          <h1 className="font-display text-[13vw] font-extrabold uppercase leading-[0.82] tracking-tighter text-slate-50 sm:text-[15vw] md:text-[12vw] lg:text-[10.5vw]">
+            <span className="block whitespace-nowrap">
               {word(PROFILE.firstName).map((c, i) => (
                 <motion.span key={i} initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ delay: 0.15 + i * 0.04, duration: 0.7, ease: [0.22, 1, 0.36, 1] }} className="inline-block">
                   {c}
                 </motion.span>
               ))}
             </span>
-            <span className="block text-slate-500">
+            <span className="block whitespace-nowrap text-slate-500">
               {word(PROFILE.lastName).map((c, i) => (
                 <motion.span key={i} initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ delay: 0.45 + i * 0.04, duration: 0.7, ease: [0.22, 1, 0.36, 1] }} className="inline-block">
                   {c}
