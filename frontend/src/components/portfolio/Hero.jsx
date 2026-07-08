@@ -40,9 +40,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.05, duration: 0.6 }}
-          className="mb-5 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-blue-400"
+          className="mb-5 font-mono text-[11px] uppercase tracking-[0.22em] text-blue-400"
         >
-          <span className="h-px w-8 bg-blue-500/60" />
           {PROFILE.greeting}
         </motion.div>
         <div className="overflow-hidden">
@@ -72,6 +71,15 @@ export default function Hero() {
           className="mt-4 font-mono text-[11px] tracking-[0.14em] text-slate-500"
         >
           {PROFILE.pronunciation}
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.82, duration: 0.6 }}
+          className="mt-3 font-mono text-[11px] tracking-[0.14em] text-slate-500"
+        >
+          {PROFILE.goesBy}
         </motion.p>
 
         <motion.p
