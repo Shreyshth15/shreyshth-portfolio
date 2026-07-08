@@ -31,7 +31,7 @@ export const PHOTOS = {
 export const ABOUT = {
   facts: [
     { label: "Based", value: "Washington-Baltimore Area" },
-    { label: "Degree", value: "B.S. Economics & Quantitative Methods" },
+    { label: "Degree", value: "B.S. Economics & Quantitative Methods (STEM)" },
     { label: "Status", value: "Open to work" },
     { label: "Relocation", value: "Open to relocation nationwide" },
   ],
@@ -73,7 +73,7 @@ export const EXPERIENCE = [
   {
     period: "Jul 2022 - Jun 2023",
     role: "Investment Research Fellow",
-    company: "Marquee Equity · India",
+    company: "Marquee Equity · New Delhi, India",
     paragraphs: [
       "Researched 8+ early and growth-stage companies across TMT, consumer, education and B2B, assessing sector trends, funding momentum and competitive positioning.",
       "Distilled company and sector research into investor-facing narratives that informed mandate selection and deal prioritization.",
