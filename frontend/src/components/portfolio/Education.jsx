@@ -1,12 +1,12 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { SectionShell, Reveal, Emph } from "./shared";
-import { JOURNEY, JOURNEY_CLOSING, PHOTOS } from "../../data/portfolio";
+import { JOURNEY, PHOTOS } from "../../data/portfolio";
 
 export default function Education() {
   const reduced = useReducedMotion();
 
   return (
-    <SectionShell id="education" number="05 / Education" title={<>A journey of <span className="font-serif italic text-blue-400">12,000 km</span>.</>} data-testid="education-section" motif="growth">
+    <SectionShell id="education" number="05 / Education" title={<>Education &amp; <span className="font-serif italic text-blue-400">Analytical</span> Foundation</>} data-testid="education-section" motif="growth">
       <div className="relative pl-12 md:pl-20" data-testid="journey-timeline">
         {/* connecting line, draws once on scroll */}
         <div className="absolute bottom-6 left-[15px] top-2 w-px bg-white/8 md:left-[23px]">
@@ -39,12 +39,6 @@ export default function Education() {
           ))}
         </div>
       </div>
-
-      <Reveal className="mt-10">
-        <p data-testid="journey-closing" className="pl-12 font-mono text-[10px] uppercase tracking-[0.18em] leading-relaxed text-slate-500 sm:text-[11px] sm:tracking-[0.22em] md:pl-20">
-          {JOURNEY_CLOSING}
-        </p>
-      </Reveal>
 
       <Reveal className="mt-12">
         <div className="overflow-hidden rounded-2xl border border-white/10">

@@ -8,7 +8,6 @@ export const PROFILE = {
   greeting: "Hello, I'm",
   est: "2002",
   location: "Washington-Baltimore Area",
-  relocation: "Open to relocation nationwide",
   timezone: "America/Indiana/Indianapolis",
   email: "shshar@iu.edu",
   emailAlt: "Shreshth2002@gmail.com",
@@ -17,7 +16,7 @@ export const PROFILE = {
   resumeUrl: "/Shreyshth-Sharma-CV.pdf",
   shortBio:
     "Economics & Quantitative Methods graduate from Indiana University Bloomington, with a minor in Psychology, focused on finance, asset management, analytics and investment research. I turn market information, data and business problems into clear, decision-ready analysis.",
-  heroTags: ["Finance", "Analytics", "Asset Management", "Credit Research", "Fixed Income", "Behavioral Economics"],
+  heroTags: ["Finance", "Analytics", "Investment Research", "Credit Research", "Fixed Income Research", "Macro & Rates Analysis", "Behavioral Economics"],
   built: ["Intel Site-Selection Models", "UBI Labor-Supply Simulation", "Investor Research Decks"],
   workedWith: ["Advanced Excel", "PowerPoint", "Tableau", "SQL", "Python", "R"],
   openTo: ["Asset Management", "Credit Research", "Structured Finance", "Portfolio & Performance Analytics", "Investment Research", "Consulting"],
@@ -31,19 +30,19 @@ export const PHOTOS = {
 
 export const ABOUT = {
   facts: [
-    { label: "Born", value: "New Delhi, India" },
     { label: "Based", value: "Washington-Baltimore Area" },
-    { label: "Degree", value: "B.S. Econ & Quant (STEM)" },
+    { label: "Degree", value: "B.S. Economics & Quantitative Methods" },
     { label: "Status", value: "Open to work" },
+    { label: "Relocation", value: "Open to relocation nationwide" },
   ],
   paragraphs: [
     "I'm an Economics & Quantitative Methods graduate from Indiana University Bloomington with a minor in Psychology, focused on finance, investment research, credit, and analytics.",
-    "Across Marquee Equity, DLF, nTalents.ai, and The Global Tech Experience, I have supported company research, valuation materials, expense analysis, SQL and Python workflows, Tableau dashboards, and client-facing reporting.",
-    "My work sits at the intersection of finance, data, and communication: taking market information, company data, and business problems and turning them into decision-ready analysis.",
+    "Across investment research, finance operations, and data analytics roles, I have worked on company research, valuation materials, expense analysis, SQL and Python workflows, Tableau dashboards, and client-facing reporting.",
+    "My work sits at the intersection of finance, data, and communication: turning market information, company data, and business problems into decision-ready analysis.",
   ],
   stats: [
-    { value: "4", label: "Finance & Analytics Experiences", sub: "Investment research, finance operations, data analytics, and client reporting" },
-    { value: "8+", label: "Companies Analyzed", sub: "Company and sector analysis across TMT, consumer, education, and B2B" },
+    { value: "4", label: "Internships", sub: "Investment research, finance operations, data analytics, and client reporting" },
+    { value: "3", label: "Analytical Projects", sub: "Intel site selection, UBI labor-supply simulation, and GRAMMYs audience analytics" },
   ],
 };
 
@@ -51,12 +50,12 @@ export const SKILLS = [
   {
     key: "a.",
     title: "Finance & Markets",
-    items: ["Company & Sector Research", "Financial Analysis", "Valuation Support", "Credit Research", "Fixed Income Research", "Macro & Rates Analysis"],
+    items: ["Company Research", "Sector Research", "Financial Analysis", "Valuation Support", "Credit Research", "Fixed Income Research", "Macro & Rates Analysis"],
   },
   {
     key: "b.",
     title: "Analytics",
-    items: ["Statistical Analysis", "Econometric Modeling", "Data Cleaning & QA", "Multi-Source Data Integration", "Dashboard Development", "Sensitivity Analysis"],
+    items: ["Statistical Analysis", "Econometric Modeling", "Data Cleaning & QA", "Data Integration", "Dashboard Development", "Sensitivity Analysis"],
   },
   {
     key: "c.",
@@ -74,7 +73,7 @@ export const EXPERIENCE = [
   {
     period: "Jul 2022 - Jun 2023",
     role: "Investment Research Fellow",
-    company: "Marquee Equity · New Delhi, India",
+    company: "Marquee Equity · India",
     paragraphs: [
       "Researched 8+ early and growth-stage companies across TMT, consumer, education and B2B, assessing sector trends, funding momentum and competitive positioning.",
       "Distilled company and sector research into investor-facing narratives that informed mandate selection and deal prioritization.",
@@ -179,41 +178,25 @@ export const PROJECTS = [
 export const JOURNEY = [
   {
     num: "1",
-    tag: "Origin",
-    place: "New Delhi",
-    period: "2002 - 2021",
-    text: "Raised in New Delhi, I moved to the United States in 2021 to study at Indiana University Bloomington. The move shaped my independence, adaptability, and interest in using economics and data to understand real business decisions.",
+    tag: "",
+    place: "Indiana University Bloomington",
+    period: "2021 - 2026",
+    text: "B.S. in Economics & Quantitative Methods with a minor in Psychology. Coursework and projects focused on econometrics, data analysis, economic modeling, finance, and decision-making.",
   },
   {
     num: "2",
-    tag: "The Switch",
-    place: "Bloomington",
-    period: "2021 - 2026",
-    text: "I began at Indiana University as a Kelley School of Business direct admit, focused on finance. After my sophomore year, I moved to the College of Arts and Sciences to study Economics and Quantitative Methods, a STEM-designated program centered on econometrics, data analysis, and economic modeling. The switch gave me stronger quantitative depth and better aligned with the finance, markets, and analytics work I want to do.",
+    tag: "",
+    place: "London School of Economics",
+    period: "Jul - Aug 2024",
+    text: "At the London School of Economics, I studied Intermediate Macroeconomics and Introduction to Econometrics. The coursework strengthened how I think about inflation, output gaps, policy decisions, assumptions, and empirical evidence.",
   },
   {
     num: "3",
-    tag: "Exchange",
-    place: "London",
-    period: "Jul - Aug 2024",
-    text: "A summer at the London School of Economics, and the point where theory started paying rent. Intermediate Macroeconomics taught me to read policy the way policymakers argue about it: output gaps, inflation dynamics, the machinery behind a rate decision. Introduction to Econometrics gave me the habit I still use every day: state the assumption, test it, and let the data tell you when you are wrong. I came back reading markets differently.",
-  },
-  {
-    num: "4",
-    tag: "Markets",
-    place: "Markets",
+    tag: "",
+    place: "Markets & Self-Study",
     period: "Ongoing",
-    text: "Building fixed income and credit foundations through self-directed study of the CFA curriculum: ethics, financial reporting, equity, and fixed income. The goal is simple: be the analyst who understands both the model and the market it lives in.",
+    text: "Continuing to build fixed income and credit foundations through self-directed CFA curriculum study, with focus on ethics, financial reporting, equity analysis, and fixed income.",
   },
-];
-
-export const JOURNEY_CLOSING = "The move shaped how I think about risk, independence, and long-term decision-making.";
-
-export const INTERESTS = [
-  { symbol: "↗", title: "Markets & Macro", text: "Daily reading on rates, credit and the macro picture. Staying current isn't optional when the field moves every morning.", note: "Curious by default" },
-  { symbol: "⚽", title: "Football", text: "Watching the game properly, formations, transitions, the why behind the goal. The same pattern-reading I bring to a market." },
-  { symbol: "◷", title: "Philosophy", text: "Long-form arguments and first principles. Pressure-tests how I reason about everything else." },
-  { symbol: "△", title: "Fitness", text: "The discipline ledger. Consistent inputs, compounding outputs, no shortcuts, the cleanest feedback loop I know." },
 ];
 
 export const SECTIONS = [
@@ -224,10 +207,3 @@ export const SECTIONS = [
   { id: "education", label: "Education" },
   { id: "contact", label: "Contact" },
 ];
-
-export const MARQUEE = [
-  "Asset Management", "Credit Research", "Valuation", "Tableau", "Python", "SQL",
-  "Econometrics", "Investment Research", "Fixed Income", "Financial Analysis", "Consulting", "Advanced Excel",
-];
-
-export const CHAT_PROMPTS = [];

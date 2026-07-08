@@ -1,5 +1,5 @@
 import { SectionShell, Reveal, Emph } from "./shared";
-import { ABOUT, PHOTOS, PROFILE } from "../../data/portfolio";
+import { ABOUT, PHOTOS } from "../../data/portfolio";
 
 export default function About() {
   return (
@@ -12,12 +12,6 @@ export default function About() {
           </Reveal>
         ))}
       </div>
-
-      <Reveal>
-        <p data-testid="about-relocation" className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-blue-400/80">
-          {PROFILE.relocation}
-        </p>
-      </Reveal>
 
       <div className="mt-10 space-y-6">
         {ABOUT.paragraphs.map((p, i) => (

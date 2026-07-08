@@ -72,3 +72,11 @@ Finance recruiters / hiring managers in asset management & credit research evalu
 - ChatWidget removed entirely (file deleted, CHAT_PROMPTS emptied); backend chat endpoint remains but unused by UI.
 - Mobile polish: About text 15px/1.75, chips wrap cleanly, no overflow. All verified via live screenshots.
 - User to push via Save to GitHub -> Shreyshth15/shreyshth-portfolio main.
+
+## Session Update (Jul 8, 2026): De-personalization pass (12 items)
+- Removed ALL Delhi/Kelley/direct-admit/12,000km narrative from site copy. Marquee Equity location -> "India".
+- About: verbatim role-type copy (no company names in para 2). Facts: Based/Degree/Status/Relocation (Born removed, standalone relocation line removed).
+- Stats: "4 Internships" + "3 Analytical Projects" with subtitles.
+- Skills: Company Research & Sector Research split, "Data Integration". Hero tags list per user (7 tags). Education retitled "Education & Analytical Foundation" with 3 factual cards, closing line removed.
+- Deleted unused: Interests.jsx, INTERESTS, MARQUEE, CHAT_PROMPTS, JOURNEY_CLOSING, PROFILE.relocation/phone. Pruned Emph KEY_TERMS.
+- All verified via mobile+desktop screenshots. User to push via Save to GitHub.
