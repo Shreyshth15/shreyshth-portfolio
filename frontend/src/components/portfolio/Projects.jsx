@@ -88,7 +88,7 @@ const Breakdown = ({ breakdown }) => (
 
 export default function Projects() {
   return (
-    <SectionShell id="projects" number="04 / Projects" title={<>Selected <span className="font-serif italic text-blue-400">Analytical</span> Projects</>} data-testid="projects-section" motif="normal">
+    <SectionShell id="projects" number="04 / Projects" title={<>Things I've built, broken, and <span className="font-serif italic text-blue-400">kept building</span></>} data-testid="projects-section" motif="normal">
       <div className="space-y-6">
         {PROJECTS.map((p, i) => (
           <Reveal key={p.title} delay={i * 0.05}>

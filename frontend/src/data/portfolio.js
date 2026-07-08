@@ -180,7 +180,7 @@ export const JOURNEY = [
     num: "1",
     tag: "",
     place: "Indiana University Bloomington",
-    period: "2021 - 2026",
+    period: "2026",
     text: "B.S. in Economics & Quantitative Methods with a minor in Psychology. Coursework and projects focused on econometrics, data analysis, economic modeling, finance, and decision-making.",
   },
   {
