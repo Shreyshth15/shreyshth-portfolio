@@ -3,7 +3,6 @@ export const PROFILE = {
   firstName: "Shreyshth",
   lastName: "Sharma",
   pronunciation: 'Pronounced "Shrey-sh-th Shar-ma"',
-  goesBy: "Goes by Shrey",
   role: "Finance · Analytics · Investment Research",
   tagline: "Shrey Sharma · Finance · Analytics · Investment Research",
   greeting: "Hello, I'm",

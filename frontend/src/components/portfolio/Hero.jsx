@@ -76,15 +76,6 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.82, duration: 0.6 }}
-          className="mt-3 font-mono text-[11px] tracking-[0.14em] text-slate-500"
-        >
-          {PROFILE.goesBy}
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
           transition={{ delay: 0.85, duration: 0.6 }}
           className="mt-5 font-mono text-[11px] uppercase tracking-[0.2em] text-slate-300"
         >
