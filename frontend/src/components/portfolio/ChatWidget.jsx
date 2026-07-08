@@ -11,7 +11,7 @@ export default function ChatWidget() {
   const [sessionId, setSessionId] = useState(null);
   const [streaming, setStreaming] = useState(false);
   const [messages, setMessages] = useState([
-    { role: "assistant", content: "Hey, I'm Cole. Ask me anything about Shreyshth, his work, his experience, or why he'd be a strong hire." },
+    { role: "assistant", content: "Hey, I'm Ash. Ask me anything about Shreyshth, his work, his experience, or why he'd be a strong hire." },
   ]);
   const scrollRef = useRef(null);
 
@@ -86,7 +86,7 @@ export default function ChatWidget() {
         className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-blue-500 px-5 py-3.5 font-mono text-xs uppercase tracking-[0.14em] text-white shadow-lg shadow-blue-500/30 transition-colors hover:bg-blue-400"
       >
         {open ? <X className="h-4 w-4" /> : <MessageSquare className="h-4 w-4" />}
-        {open ? "Close" : "Ask Cole"}
+        {open ? "Close" : "Ask"}
       </motion.button>
 
       <AnimatePresence>
@@ -100,9 +100,9 @@ export default function ChatWidget() {
             className="fixed bottom-24 right-6 z-50 flex h-[540px] max-h-[72vh] w-[calc(100vw-3rem)] max-w-[400px] flex-col overflow-hidden rounded-2xl border border-white/12 bg-[#070d1f] shadow-2xl"
           >
             <div className="flex items-center gap-3 border-b border-white/10 px-5 py-4">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-500 font-display text-sm font-bold text-white">C</span>
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-500 font-display text-sm font-bold text-white">A</span>
               <div>
-                <p className="font-display text-sm font-medium text-slate-50">Cole</p>
+                <p className="font-display text-sm font-medium text-slate-50">Ash</p>
                 <p className="font-mono text-[10px] uppercase tracking-wider text-emerald-400">usually replies instantly</p>
               </div>
             </div>
