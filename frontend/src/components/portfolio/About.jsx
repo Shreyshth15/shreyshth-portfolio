@@ -22,7 +22,7 @@ export default function About() {
       <div className="mt-10 space-y-6">
         {ABOUT.paragraphs.map((p, i) => (
           <Reveal key={i} delay={i * 0.05}>
-            <p className="text-base leading-relaxed text-slate-300 md:text-[17px]"><Emph>{p}</Emph></p>
+            <p className="text-[15px] leading-[1.75] text-slate-300 sm:text-base md:text-[17px]"><Emph>{p}</Emph></p>
           </Reveal>
         ))}
       </div>
@@ -39,11 +39,12 @@ export default function About() {
         </div>
       </Reveal>
 
-      <div className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
+      <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2">
         {ABOUT.stats.map((s) => (
           <div key={s.label} className="bg-[#050b1c] p-6 md:p-8" data-testid={`stat-${s.label}`}>
             <p className="font-display text-3xl font-bold text-slate-50 md:text-5xl">{s.value}</p>
-            <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.15em] text-slate-500">{s.label}</p>
+            <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.15em] text-slate-400">{s.label}</p>
+            {s.sub && <p className="mt-2.5 text-[13px] leading-relaxed text-slate-500">{s.sub}</p>}
           </div>
         ))}
       </div>

@@ -8,12 +8,10 @@ export const PROFILE = {
   greeting: "Hello, I'm",
   est: "2002",
   location: "Washington-Baltimore Area",
-  relocation: "Open to relocation nationwide · NYC · Chicago · Florida · Texas",
+  relocation: "Open to relocation nationwide",
   timezone: "America/Indiana/Indianapolis",
   email: "shshar@iu.edu",
   emailAlt: "Shreshth2002@gmail.com",
-  phone: "+1 (240) 733-5436",
-  phoneHref: "tel:+12407335436",
   linkedin: "https://www.linkedin.com/in/shreyshth-sharma-0170",
   linkedinLabel: "/in/shreyshth-sharma-0170",
   resumeUrl: "/Shreyshth-Sharma-CV.pdf",
@@ -21,7 +19,7 @@ export const PROFILE = {
     "Economics & Quantitative Methods graduate from Indiana University Bloomington, with a minor in Psychology, focused on finance, asset management, analytics and investment research. I turn market information, data and business problems into clear, decision-ready analysis.",
   heroTags: ["Finance", "Analytics", "Asset Management", "Credit Research", "Fixed Income", "Behavioral Economics"],
   built: ["Intel Site-Selection Models", "UBI Labor-Supply Simulation", "Investor Research Decks"],
-  workedWith: ["Advanced Excel", "Tableau", "Python", "SQL", "R"],
+  workedWith: ["Advanced Excel", "PowerPoint", "Tableau", "SQL", "Python", "R"],
   openTo: ["Asset Management", "Credit Research", "Structured Finance", "Portfolio & Performance Analytics", "Investment Research", "Consulting"],
 };
 
@@ -39,13 +37,13 @@ export const ABOUT = {
     { label: "Status", value: "Open to work" },
   ],
   paragraphs: [
-    "I grew up in New Delhi and moved to the United States in 2021 to study at Indiana University Bloomington. I began as a direct admit to the Kelley School of Business, but later chose to pursue Economics and Quantitative Methods in the College of Arts and Sciences because I wanted deeper training in econometrics, data analysis, and economic modeling.",
-    "That decision shaped the way I work: I combine finance, data, and decision-making. Across Marquee Equity, DLF, nTalents.ai, and The Global Tech Experience, I have worked on company research, financial analysis, SQL and Python workflows, Tableau dashboards, and client-facing reporting.",
-    "My psychology minor adds a behavioral lens to how I think about markets, incentives, and communication. Models matter, but so do judgment, incentives, and how decisions are actually made.",
+    "I'm an Economics & Quantitative Methods graduate from Indiana University Bloomington with a minor in Psychology, focused on finance, investment research, credit, and analytics.",
+    "Across Marquee Equity, DLF, nTalents.ai, and The Global Tech Experience, I have supported company research, valuation materials, expense analysis, SQL and Python workflows, Tableau dashboards, and client-facing reporting.",
+    "My work sits at the intersection of finance, data, and communication: taking market information, company data, and business problems and turning them into decision-ready analysis.",
   ],
   stats: [
-    { value: "4", label: "Internships" },
-    { value: "8+", label: "Companies Researched" },
+    { value: "4", label: "Finance & Analytics Experiences", sub: "Investment research, finance operations, data analytics, and client reporting" },
+    { value: "8+", label: "Companies Analyzed", sub: "Company and sector analysis across TMT, consumer, education, and B2B" },
   ],
 };
 
@@ -53,22 +51,22 @@ export const SKILLS = [
   {
     key: "a.",
     title: "Finance & Markets",
-    items: ["Financial Analysis", "Valuation", "Credit Research", "Investment Research", "Fixed Income & Credit", "Markets & Macro"],
+    items: ["Company & Sector Research", "Financial Analysis", "Valuation Support", "Credit Research", "Fixed Income Research", "Macro & Rates Analysis"],
   },
   {
     key: "b.",
     title: "Analytics",
-    items: ["Statistical Analysis", "Econometrics", "Dashboarding", "Multi-source Data Analysis", "KPI Reporting"],
+    items: ["Statistical Analysis", "Econometric Modeling", "Data Cleaning & QA", "Multi-Source Data Integration", "Dashboard Development", "Sensitivity Analysis"],
   },
   {
     key: "c.",
     title: "Tools",
-    items: ["Excel", "PowerPoint", "Tableau", "SQL", "Python", "R"],
+    items: ["Advanced Excel", "PowerPoint", "Tableau", "SQL", "Python", "R"],
   },
   {
     key: "d.",
     title: "Communication",
-    items: ["Investor Materials", "Client Reporting", "Data Storytelling", "Stakeholder Updates"],
+    items: ["Investor Materials", "Client Reports", "Executive Presentations", "Data Storytelling", "Stakeholder Updates"],
   },
 ];
 
@@ -184,14 +182,14 @@ export const JOURNEY = [
     tag: "Origin",
     place: "New Delhi",
     period: "2002 - 2021",
-    text: "Born and raised in New Delhi, I became interested in markets, incentives, and systems before studying economics formally. In 2021, I moved to the United States to study at Indiana University Bloomington and build a career at the intersection of finance, data, and decision-making.",
+    text: "Raised in New Delhi, I moved to the United States in 2021 to study at Indiana University Bloomington. The move shaped my independence, adaptability, and interest in using economics and data to understand real business decisions.",
   },
   {
     num: "2",
     tag: "The Switch",
     place: "Bloomington",
     period: "2021 - 2026",
-    text: "I arrived as a Kelley School of Business direct admit, set on finance. At the end of sophomore year I chose depth over the familiar label and moved to the College of Arts and Sciences for Economics and Quantitative Methods, a program built on econometrics, machine learning on economic data, and computational macroeconomics. My professors backed the move, my grades in economics settled it, and the Executive Dean's List the following year proved the bet right. By graduation in May 2026 I had also run budgets and events as Finance Chair of Principles of Cybersecurity, managing roughly $2K a semester for workshops with EY, AT&T, and Accenture.",
+    text: "I began at Indiana University as a Kelley School of Business direct admit, focused on finance. After my sophomore year, I moved to the College of Arts and Sciences to study Economics and Quantitative Methods, a STEM-designated program centered on econometrics, data analysis, and economic modeling. The switch gave me stronger quantitative depth and better aligned with the finance, markets, and analytics work I want to do.",
   },
   {
     num: "3",
@@ -232,9 +230,4 @@ export const MARQUEE = [
   "Econometrics", "Investment Research", "Fixed Income", "Financial Analysis", "Consulting", "Advanced Excel",
 ];
 
-export const CHAT_PROMPTS = [
-  "What roles is he targeting?",
-  "What are his strongest skills?",
-  "Tell me about his Intel project",
-  "How can I contact him?",
-];
+export const CHAT_PROMPTS = [];

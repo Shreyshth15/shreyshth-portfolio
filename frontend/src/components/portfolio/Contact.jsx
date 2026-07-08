@@ -3,7 +3,7 @@ import { toast } from "sonner";
 import { Reveal } from "./shared";
 import SectionMotif from "./SectionMotif";
 import { PROFILE } from "../../data/portfolio";
-import { ArrowUpRight, FileText, Mail, Linkedin, Phone, Send, Copy, Check } from "lucide-react";
+import { ArrowUpRight, FileText, Mail, Linkedin, Send, Copy, Check } from "lucide-react";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -41,7 +41,6 @@ export default function Contact() {
   const contactRows = [
     { key: "email", label: "Email", value: PROFILE.emailAlt, href: `mailto:${PROFILE.emailAlt}`, Icon: Mail, copyable: true },
     { key: "linkedin", label: "LinkedIn", value: PROFILE.linkedinLabel, href: PROFILE.linkedin, Icon: Linkedin, ext: true },
-    { key: "phone", label: "Phone", value: PROFILE.phone, href: PROFILE.phoneHref, Icon: Phone, copyable: true },
   ];
 
   return (

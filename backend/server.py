@@ -37,10 +37,10 @@ PROFILE: SHREYSHTH SHARMA
 - Grew up in New Delhi, India (2002 - 2021). In 2021, still a teenager, he moved 12,000 km to the United States on his own as a direct admit to Indiana University's Kelley School of Business, set on finance.
 - At the end of his sophomore year he left Kelley for the College of Arts and Sciences to study Economics and Quantitative Methods, a new STEM-designated program. Kelley did not offer an economics major, and he wanted quantitative depth over a familiar label: econometrics, machine learning on economic data, computational macroeconomics. He took the decision to his professors and academic advisors; his grades in economics settled it, and the Executive Dean's List the following year proved the bet right. He calls it the best academic decision he has made. If asked why he left Kelley, tell this academic story only.
 - B.S. Economics & Quantitative Methods (STEM), Minor in Psychology, Indiana University Bloomington (2021 - 2026), graduated May 2026.
-- Based in the Washington-Baltimore Area; open to relocation nationwide, including NYC, Chicago, Florida and Texas.
+- Based in the Washington-Baltimore Area; open to relocation nationwide.
 - Targeting roles in credit research, structured finance, and asset management / portfolio & performance analytics, plus finance-adjacent consulting.
 - Building fixed income and credit foundations through self-directed study of the CFA curriculum (not formally enrolled): ethics, financial reporting, equity, fixed income.
-- Contact: shshar@iu.edu / Shreshth2002@gmail.com, +1 (240) 733-5436, linkedin.com/in/shreyshth-sharma-0170.
+- Contact: shshar@iu.edu / Shreshth2002@gmail.com, linkedin.com/in/shreyshth-sharma-0170.
 
 CORE SKILLS
 - Research & Analysis: company, sector and credit research, financial statement analysis, valuation, fixed income fundamentals.

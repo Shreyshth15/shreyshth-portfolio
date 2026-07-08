@@ -63,3 +63,12 @@ Finance recruiters / hiring managers in asset management & credit research evalu
 - Origin journey card rewritten (professional tone, verbatim user copy); closing line now "The move shaped how I think about risk, independence, and long-term decision-making."
 - Mobile: hero name single-line (13vw + nowrap), journey cards 15px/1.75 leading, smaller nodes/padding, scroll-margin-top 6.5rem.
 - User instructed to push via Save to GitHub -> Shreyshth15/shreyshth-portfolio main -> Vercel auto-redeploy.
+
+## Session Update (Jul 8, 2026): Final recruiter polish (13-item pass)
+- Relocation simplified to "Open to relocation nationwide". About replaced with concise 3-para recruiter copy (origin/Kelley story moved to Education only, both shortened per user verbatim).
+- Stats: "4 Finance & Analytics Experiences" / "8+ Companies Analyzed" + context subtitles; single-column on mobile.
+- Skills rebuilt MECE (Finance & Markets / Analytics / Tools / Communication, exact user lists); hero Worked-with matches Tools exactly.
+- Projects title: "Selected Analytical Projects". Phone removed sitewide (contact = email + LinkedIn only).
+- ChatWidget removed entirely (file deleted, CHAT_PROMPTS emptied); backend chat endpoint remains but unused by UI.
+- Mobile polish: About text 15px/1.75, chips wrap cleanly, no overflow. All verified via live screenshots.
+- User to push via Save to GitHub -> Shreyshth15/shreyshth-portfolio main.
