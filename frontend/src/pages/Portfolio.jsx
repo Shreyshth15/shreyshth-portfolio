@@ -7,6 +7,7 @@ import Experience from "../components/portfolio/Experience";
 import Projects from "../components/portfolio/Projects";
 import Education from "../components/portfolio/Education";
 import Contact from "../components/portfolio/Contact";
+import ChatWidget from "../components/portfolio/ChatWidget";
 
 export default function Portfolio() {
   return (
@@ -22,6 +23,7 @@ export default function Portfolio() {
         <Education />
         <Contact />
       </main>
+      <ChatWidget />
     </div>
   );
 }

@@ -207,3 +207,11 @@ export const SECTIONS = [
   { id: "education", label: "Education" },
   { id: "contact", label: "Contact" },
 ];
+
+
+export const CHAT_PROMPTS = [
+  "Why should I hire him?",
+  "Walk me through his experience",
+  "What roles is he targeting?",
+  "Tell me about the UBI project",
+];
