@@ -3,7 +3,7 @@ import { SKILLS } from "../../data/portfolio";
 
 export default function Skills() {
   return (
-    <SectionShell id="skills" number="02 / Skills" title={<>What I <span className="font-serif italic text-blue-400">actually</span> know how to do</>} data-testid="skills-section">
+    <SectionShell id="skills" number="03 / Skills" title={<>What I <span className="font-serif italic text-blue-400">actually</span> know how to do</>} data-testid="skills-section">
       <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2">
         {SKILLS.map((cat, i) => (
           <Reveal key={cat.title} delay={i * 0.06} className="bg-[#050b1c]">

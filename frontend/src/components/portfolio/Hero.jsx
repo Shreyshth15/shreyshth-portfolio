@@ -71,15 +71,6 @@ export default function Hero() {
         </motion.p>
 
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.85, duration: 0.6 }}
-          className="mt-5 font-mono text-[11px] uppercase tracking-[0.2em] text-slate-300"
-        >
-          {PROFILE.tagline}
-        </motion.p>
-
-        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.7 }}

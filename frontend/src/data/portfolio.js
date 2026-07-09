@@ -2,9 +2,8 @@ export const PROFILE = {
   name: "Shreyshth Sharma",
   firstName: "Shreyshth",
   lastName: "Sharma",
-  pronunciation: 'Pronounced "Shrey-sh-th Shar-ma"',
+  pronunciation: 'Pronounced "Shrey-sh-th Shar-ma" · Goes by Shrey',
   role: "Finance · Analytics · Investment Research",
-  tagline: "Shrey Sharma · Finance · Analytics · Investment Research",
   greeting: "Hello, I'm",
   est: "2002",
   location: "Washington-Baltimore Area",
@@ -15,7 +14,7 @@ export const PROFILE = {
   linkedinLabel: "/in/shreyshth-sharma-0170",
   resumeUrl: "/Shreyshth-Sharma-CV.pdf",
   shortBio:
-    "Economics & Quantitative Methods graduate from Indiana University Bloomington, with a minor in Psychology, focused on finance, asset management, analytics and investment research. I turn market information, data and business problems into clear, decision-ready analysis.",
+    "Economics & Quantitative Methods graduate from Indiana University Bloomington, with a minor in Psychology, focused on credit research, structured finance, asset management, and investment analytics. I turn market information, company data, and business problems into clear, decision-ready analysis.",
   heroTags: ["Finance", "Analytics", "Investment Research", "Credit Research", "Fixed Income Research", "Macro & Rates Analysis", "Behavioral Economics"],
   built: ["Intel Site-Selection Models", "UBI Labor-Supply Simulation", "Investor Research Decks"],
   workedWith: ["Advanced Excel", "PowerPoint", "Tableau", "SQL", "Python", "R"],
@@ -36,12 +35,12 @@ export const ABOUT = {
     { label: "Relocation", value: "Open to relocation nationwide" },
   ],
   paragraphs: [
-    "I'm an Economics & Quantitative Methods graduate from Indiana University Bloomington with a minor in Psychology, focused on credit, investment research, and analytics.",
+    "I'm an Economics & Quantitative Methods graduate from Indiana University Bloomington with a minor in Psychology, focused on credit research, structured finance, asset management, and investment analytics.",
     "Across investment research, finance operations, and data analytics roles, I have worked on company research, valuation materials, expense analysis, SQL and Python workflows, Tableau dashboards, and client-facing reporting.",
     "My work sits at the intersection of finance, data, and communication: turning market information, company data, and business problems into decision-ready analysis.",
   ],
   stats: [
-    { value: "4", label: "Internships", sub: "Investment research, finance operations, data analytics, and client reporting" },
+    { value: "4", label: "Internships", sub: "Investment research, finance operations, data analytics, and business intelligence." },
     { value: "3", label: "Analytical Projects", sub: "Intel site selection, UBI labor-supply simulation, and GRAMMYs audience analytics" },
   ],
 };
@@ -201,8 +200,8 @@ export const JOURNEY = [
 
 export const SECTIONS = [
   { id: "about", label: "About" },
-  { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
+  { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
   { id: "education", label: "Education" },
   { id: "contact", label: "Contact" },
