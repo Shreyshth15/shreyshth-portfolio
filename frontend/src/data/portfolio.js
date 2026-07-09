@@ -37,7 +37,7 @@ export const ABOUT = {
   paragraphs: [
     "I'm an Economics & Quantitative Methods graduate from Indiana University Bloomington with a minor in Psychology, focused on credit research, structured finance, asset management, and investment analytics.",
     "Across investment research, finance operations, and data analytics roles, I have worked on company research, valuation materials, expense analysis, SQL and Python workflows, Tableau dashboards, and client-facing reporting.",
-    "My work sits at the intersection of finance, data, and communication: turning market information, company data, and business problems into decision-ready analysis.",
+    "My edge is combining financial reasoning with analytical execution: understanding the business question, structuring the data, and presenting the answer clearly enough for someone to act on it.",
   ],
   stats: [
     { value: "4", label: "Internships", sub: "Investment research, finance operations, data analytics, and business intelligence." },
