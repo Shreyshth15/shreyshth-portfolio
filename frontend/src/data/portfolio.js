@@ -180,21 +180,21 @@ export const JOURNEY = [
     tag: "",
     place: "Indiana University Bloomington",
     period: "2026",
-    text: "B.S. in Economics & Quantitative Methods with a minor in Psychology. Coursework and projects across econometrics, machine learning on economic data, computational macroeconomics, game theory, and statistical analysis. Executive Dean's List. Finance Chair, Principles of Cybersecurity.",
+    text: "B.S. in Economics & Quantitative Methods, minor in Psychology. Built a quantitative core across econometrics, machine learning on economic data, computational macroeconomics, game theory, and statistical analysis, applying it in projects from policy simulation to industry analytics. Executive Dean's List. Served as Finance Chair of Principles of Cybersecurity, owning the budget behind workshops and speaker events with EY, AT&T, and Accenture.",
   },
   {
     num: "2",
     tag: "",
     place: "London School of Economics",
     period: "Jul - Aug 2024",
-    text: "At the London School of Economics, I studied Intermediate Macroeconomics and Introduction to Econometrics. The coursework strengthened how I think about inflation, output gaps, policy decisions, assumptions, and empirical evidence.",
+    text: "Summer coursework in Intermediate Macroeconomics and Introduction to Econometrics. Macro sharpened how I read inflation, output gaps, and policy decisions, while econometrics built the discipline I still work by: state the assumption, test it, and let the evidence decide.",
   },
   {
     num: "3",
     tag: "",
     place: "Markets & Self-Study",
     period: "Ongoing",
-    text: "Continuing to build fixed income and credit foundations through self-directed CFA curriculum study, with focus on ethics, financial reporting, equity analysis, and fixed income.",
+    text: "Deepening fixed income and credit foundations through structured self-study of the CFA curriculum: ethics, financial reporting, equity analysis, and fixed income. The aim is simple: pair market judgment with analytical rigor.",
   },
 ];
 
