@@ -2,12 +2,12 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "https://shrey15.vercel.app/",
+      "destination": "https://shreysharma15.vercel.app/",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "destination": "https://shrey15.vercel.app/:path*",
+      "destination": "https://shreysharma15.vercel.app/:path*",
       "permanent": true
     }
   ]
