@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://shrey15.vercel.app/:path*",
+      "permanent": true
+    }
+  ]
+}
